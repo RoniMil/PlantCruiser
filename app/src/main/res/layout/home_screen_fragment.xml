@@ -8,20 +8,17 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-    <com.google.android.material.button.MaterialButton
+    <Button
+        style="@style/CustomButton"
         android:id="@+id/lang_button"
-        style="@style/Widget.MaterialComponents.Button.Icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end"
-        android:text="Lang"
-        app:icon="@drawable/language"
-        app:iconGravity="textStart"
-        app:iconTint="@color/black"
-        app:iconPadding="8dp"
-        app:iconSize="8dp">
+        android:text="@string/language"
+        app:icon="@drawable/lang_icon"
+        >
 
-    </com.google.android.material.button.MaterialButton>
+    </Button>
 
     <TextView
         android:layout_width="wrap_content"
@@ -37,25 +34,33 @@
         style="@style/CustomButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="DB"></Button>
+        android:text="Plant database">
+
+    </Button>
 
     <Button
         style="@style/CustomButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Track"></Button>
+        android:text="Track">
+
+    </Button>
 
     <Button
         style="@style/CustomButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Suggest"></Button>
+        android:text="Suggest">
+
+    </Button>
 
     <Button
         style="@style/CustomButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Plant Finder"></Button>
+        android:text="Plant Finder">
+
+    </Button>
 
 
 </LinearLayout>
