@@ -1,4 +1,21 @@
 <resources>
-    <string name="app_name">PlantCruiser</string>
+    <string name="app_name" translatable="false">PlantCruiser</string>
     <string name="language">ENG</string>
+    <string name="enter_plant_name">Enter plant name</string>
+    <string name="enter_plant_description">Enter plant description</string>
+    <string name="select_image">Select image</string>
+    <string name="set_reminder">Set reminder</string>
+    <string name="finish">Finish</string>
+    <string name="database">Database</string>
+    <string name="my_plants">My plants</string>
+    <string name="suggest_a_plant">Suggest a plant</string>
+    <string name="plant_finder">Plant finder</string>
+    <string name="edit">Edit</string>
+    <string name="add_plant">Add plant</string>
+    <string name="remove_plant">Remove plant</string>
+    <string name="plant_description">Plant description</string>
+    <string name="watering">Watering</string>
+    <string name="fertilizing">Fertilizing</string>
+    <string name="pest_treatment">Pest treatment</string>
+    <string name="custom_reminder">Custom reminder</string>
 </resources>
