@@ -30,4 +30,7 @@
     <string name="location">מיקום</string>
     <string name="sun_conditions">תנאי שמש</string>
     <string name="temperature">טמפרטורה</string>
+    <string name="identified_plant">צמח מזוהה</string>
+    <string name="percentage_of_correctness">אחוזי נכונות</string>
+    <string name="plant_info">פרטי הצמח</string>
 </resources>
