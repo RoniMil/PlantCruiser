@@ -18,4 +18,6 @@
     <string name="fertilizing">Fertilizing</string>
     <string name="pest_treatment">Pest treatment</string>
     <string name="custom_reminder">Custom reminder</string>
+    <string name="plants">Plants</string>
+    <string name="pests">Pests</string>
 </resources>
