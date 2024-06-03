@@ -22,4 +22,7 @@
     <string name="pests">Pests</string>
     <string name="environment_sensor">Environment Sensor</string>
     <string name="manual_selection">Manual Selection</string>
+    <string name="reminder_name">Reminder Name</string>
+    <string name="reminder_details">Reminder Details</string>
+    <string name="date_calendar_button">Date/Calendar</string>
 </resources>

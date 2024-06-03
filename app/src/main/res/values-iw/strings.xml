@@ -22,4 +22,7 @@
     <string name="pests">מזיקים</string>
     <string name="environment_sensor">חיישן סביבה</string>
     <string name="manual_selection">בחירה ידנית</string>
+    <string name="reminder_name">שם התזכורת</string>
+    <string name="reminder_details">פרטי התזכורת</string>
+    <string name="date_calendar_button">תאריך/לוח שנה</string>
 </resources>
