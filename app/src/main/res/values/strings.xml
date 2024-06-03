@@ -22,4 +22,10 @@
     <string name="pests">Pests</string>
     <string name="environment_sensor">Environment Sensor</string>
     <string name="manual_selection">Manual Selection</string>
+    <string name="difficulty_level">Difficulty level</string>
+    <string name="season">Season</string>
+    <string name="location">Location</string>
+    <string name="sun_conditions">Sun conditions</string>
+    <string name="temperature">Temperature</string>
+
 </resources>
