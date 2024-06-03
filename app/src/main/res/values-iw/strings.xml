@@ -20,4 +20,6 @@
     <string name="custom_reminder">תזכורת מותאמת אישית</string>
     <string name="plants">צמחים</string>
     <string name="pests">מזיקים</string>
+    <string name="environment_sensor">חיישן סביבה</string>
+    <string name="manual_selection">בחירה ידנית</string>
 </resources>

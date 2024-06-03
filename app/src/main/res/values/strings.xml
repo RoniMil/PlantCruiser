@@ -20,4 +20,6 @@
     <string name="custom_reminder">Custom reminder</string>
     <string name="plants">Plants</string>
     <string name="pests">Pests</string>
+    <string name="environment_sensor">Environment Sensor</string>
+    <string name="manual_selection">Manual Selection</string>
 </resources>
