@@ -25,4 +25,9 @@
     <string name="reminder_name">Reminder Name</string>
     <string name="reminder_details">Reminder Details</string>
     <string name="date_calendar_button">Date/Calendar</string>
+    <string name="difficulty_level">Difficulty Level</string>
+    <string name="season">Season</string>
+    <string name="location">Location</string>
+    <string name="sun_conditions">Sun Conditions</string>
+    <string name="temperature">Temprature</string>
 </resources>

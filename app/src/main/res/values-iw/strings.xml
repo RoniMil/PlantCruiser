@@ -25,4 +25,9 @@
     <string name="reminder_name">שם התזכורת</string>
     <string name="reminder_details">פרטי התזכורת</string>
     <string name="date_calendar_button">תאריך/לוח שנה</string>
+    <string name="difficulty_level">רמת קושי</string>
+    <string name="season">עונה</string>
+    <string name="location">מיקום</string>
+    <string name="sun_conditions">תנאי שמש</string>
+    <string name="temperature">טמפרטורה</string>
 </resources>
