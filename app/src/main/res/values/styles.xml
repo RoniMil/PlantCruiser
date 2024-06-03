@@ -11,7 +11,8 @@
     <style name="CustomButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
         <item name="backgroundTint">@color/light_gray</item>
         <item name="android:textColor">@color/black</item>
-        <item name="android:textSize">11sp</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:gravity">center</item>
         <item name="android:textStyle">bold</item>
         <item name="cornerRadius">4dp</item>
         <item name="layout_constraintWidth_max">320dp</item>
