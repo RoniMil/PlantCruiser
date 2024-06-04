@@ -8,6 +8,7 @@
     >
 
     <TextView
+        android:id="@+id/reminderName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="@string/reminder_name"
@@ -15,12 +16,14 @@
         android:textSize="32sp"/>
 
     <Button
+        android:id="@+id/dataCalendarButton"
         style="@style/CustomButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/date_calendar_button" />
 
     <TextView
+        android:id="@+id/reminderDetails"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="@string/reminder_details"

@@ -12,7 +12,7 @@
 
     <Button
         style="@style/CustomButton"
-        android:id="@+id/lang_button"
+        android:id="@+id/languageButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end"
@@ -23,6 +23,7 @@
     </Button>
 
     <TextView
+        android:id="@+id/appTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
@@ -34,7 +35,7 @@
 
     <Button
         style="@style/CustomButton"
-        android:id="@+id/database_button"
+        android:id="@+id/databaseButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/database">
@@ -43,7 +44,7 @@
 
     <Button
         style="@style/CustomButton"
-        android:id="@+id/my_plants_button"
+        android:id="@+id/myPlantsButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/my_plants">
@@ -52,7 +53,7 @@
 
     <Button
         style="@style/CustomButton"
-        android:id="@+id/suggest_a_plant_button"
+        android:id="@+id/suggestAPlantButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/suggest_a_plant">
@@ -61,7 +62,7 @@
 
     <Button
         style="@style/CustomButton"
-        android:id="@+id/plant_finder_button"
+        android:id="@+id/plantFinderButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/plant_finder">

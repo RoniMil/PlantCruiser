@@ -8,14 +8,14 @@
     >
 
     <Button
-        android:id="@+id/db_menu_fragment_plants_button"
+        android:id="@+id/environmentSensorButton"
         style="@style/CustomButton"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="@string/environment_sensor" />
 
     <Button
-        android:id="@+id/db_menu_fragment_pests_button"
+        android:id="@+id/manualSelectionButton"
         style="@style/CustomButton"
         android:layout_width="200dp"
         android:layout_height="wrap_content"

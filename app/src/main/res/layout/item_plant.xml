@@ -16,14 +16,14 @@
         android:padding="8dp">
 
         <ImageView
-            android:id="@+id/plant_image"
+            android:id="@+id/plantImage"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:background="@android:color/darker_gray"
             android:scaleType="centerCrop"/>
 
         <TextView
-            android:id="@+id/plant_name"
+            android:id="@+id/plantName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="PLANT NAME"
