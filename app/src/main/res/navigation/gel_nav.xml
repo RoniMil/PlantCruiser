@@ -12,10 +12,15 @@
         <action
             android:id="@+id/action_mainMenuFragment_to_DBFragment"
             app:destination="@id/DBFragment" />
+
     </fragment>
     <fragment
         android:id="@+id/DBFragment"
         android:name="com.example.plantcruiser.DBFragment"
         android:label="db_menu_fragment"
-        tools:layout="@layout/db_menu_fragment" />
+        tools:layout="@layout/db_menu_fragment" >
+        <action
+            android:id="@+id/action_DBFragment_to_mainMenuFragment"
+            app:destination="@id/mainMenuFragment" />
+    </fragment>
 </navigation>

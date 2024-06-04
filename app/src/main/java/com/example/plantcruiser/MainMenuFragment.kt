@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.plantcruiser.databinding.DbMenuFragmentBinding
+import androidx.navigation.fragment.findNavController
 import com.example.plantcruiser.databinding.MainMenuFragmentBinding
 
 
@@ -19,9 +19,12 @@ class MainMenuFragment : Fragment() {
     ): View? {
         _binding = MainMenuFragmentBinding.inflate(inflater,container,false)
 
-        binding.databaseButton
+        binding.databaseButton.setOnClickListener{
+            findNavController().navigate(R.id.action_mainMenuFragment_to_DBFragment)
+        }
 
-        findNavController().navigate(R.id.action_mainMenuFragment_to_DBFragment)
+        return binding.root
+
     }
-    return super.onCreateView(inflater, container, savedInstanceState)
+
 }

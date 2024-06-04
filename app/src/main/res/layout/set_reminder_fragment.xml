@@ -20,6 +20,7 @@
 
     <Button
         style="@style/CustomButton"
+        android:id="@+id/wateringButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/watering">
@@ -28,6 +29,7 @@
 
     <Button
         style="@style/CustomButton"
+        android:id="@+id/fertilizingButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/fertilizing">
@@ -36,6 +38,7 @@
 
     <Button
         style="@style/CustomButton"
+        android:id="@+id/pestTreatmentButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/pest_treatment">
@@ -44,6 +47,7 @@
 
     <Button
         style="@style/CustomButton"
+        android:id="@+id/customReminderButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/custom_reminder">
