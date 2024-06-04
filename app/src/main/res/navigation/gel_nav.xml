@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/gel_nav"
+    app:startDestination="@id/mainMenuFragment">
+    <fragment
+        android:id="@+id/mainMenuFragment"
+        android:name="com.example.plantcruiser.MainMenuFragment"
+        android:label="main_menu_fragment"
+        tools:layout="@layout/main_menu_fragment" >
+        <action
+            android:id="@+id/action_mainMenuFragment_to_DBFragment"
+            app:destination="@id/DBFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/DBFragment"
+        android:name="com.example.plantcruiser.DBFragment"
+        android:label="db_menu_fragment"
+        tools:layout="@layout/db_menu_fragment" />
+</navigation>

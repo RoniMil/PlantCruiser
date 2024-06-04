@@ -7,7 +7,8 @@
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    tools:context=".MainMenuFragment">
 
     <Button
         style="@style/CustomButton"
@@ -33,6 +34,7 @@
 
     <Button
         style="@style/CustomButton"
+        android:id="@+id/database_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/database">
@@ -41,6 +43,7 @@
 
     <Button
         style="@style/CustomButton"
+        android:id="@+id/my_plants_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/my_plants">
@@ -49,6 +52,7 @@
 
     <Button
         style="@style/CustomButton"
+        android:id="@+id/suggest_a_plant_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/suggest_a_plant">
@@ -57,6 +61,7 @@
 
     <Button
         style="@style/CustomButton"
+        android:id="@+id/plant_finder_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/plant_finder">
