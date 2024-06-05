@@ -22,9 +22,6 @@ class MainMenuFragment : Fragment() {
         binding.databaseButton.setOnClickListener{
             findNavController().navigate(R.id.action_mainMenuFragment_to_DBFragment)
         }
-
         return binding.root
-
     }
-
 }
