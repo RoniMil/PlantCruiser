@@ -8,8 +8,9 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.plantcruiser.R
 import com.example.plantcruiser.databinding.MainMenuFragmentBinding
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class MainMenuFragment : Fragment() {
     private var _binding : MainMenuFragmentBinding? = null
     private val binding get() = _binding!!

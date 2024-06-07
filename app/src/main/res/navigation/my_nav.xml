@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/DBFragment"
-        android:name="com.example.plantcruiser.ui.DBFragment"
+        android:name="com.example.plantcruiser.ui.DBMenuFragment"
         android:label="db_menu_fragment"
         tools:layout="@layout/db_menu_fragment" >
         <action

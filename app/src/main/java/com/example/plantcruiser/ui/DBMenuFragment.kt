@@ -8,9 +8,10 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.plantcruiser.R
 import com.example.plantcruiser.databinding.DbMenuFragmentBinding
+import dagger.hilt.android.AndroidEntryPoint
 
-
-class DBFragment : Fragment() {
+@AndroidEntryPoint
+class DBMenuFragment : Fragment() {
     private var _binding : DbMenuFragmentBinding? = null
     private val binding get() = _binding!!
     override fun onCreateView(

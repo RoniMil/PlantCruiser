@@ -2,7 +2,7 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
     id("kotlin-kapt")
-
+    id("com.google.dagger.hilt.android") version "2.44" apply false
 
 }
 
@@ -82,6 +82,9 @@ dependencies {
     implementation(libs.androidx.lifecycle.common.java8)
     implementation(libs.androidx.lifecycle.extensions)
     implementation(libs.glide)
+    implementation(libs.hilt.android)
+    implementation(libs.com.google.dagger.hilt.android.gradle.plugin)
+    kapt(libs.hilt.android.compiler)
     kapt(libs.hilt.compiler)
     //noinspection KaptUsageInsteadOfKsp
     kapt(libs.androidx.room.compiler)
