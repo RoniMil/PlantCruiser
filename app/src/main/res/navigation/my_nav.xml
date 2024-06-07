@@ -11,11 +11,11 @@
         tools:layout="@layout/main_menu_fragment" >
         <action
             android:id="@+id/action_mainMenuFragment_to_DBFragment"
-            app:destination="@id/DBFragment" />
+            app:destination="@id/DBMenuFragment" />
 
     </fragment>
     <fragment
-        android:id="@+id/DBFragment"
+        android:id="@+id/DBMenuFragment"
         android:name="com.example.plantcruiser.ui.DBMenuFragment"
         android:label="db_menu_fragment"
         tools:layout="@layout/db_menu_fragment" >
