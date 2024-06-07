@@ -5,17 +5,17 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".DBFragment">
+    tools:context=".ui.DBFragment">
 
     <Button
-        android:id="@+id/DBMenuPlantsButton"
+        android:id="@+id/plantsButton"
         style="@style/CustomButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/plants" />
 
     <Button
-        android:id="@+id/DBMenuPestsButton"
+        android:id="@+id/pestsButton"
         style="@style/CustomButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

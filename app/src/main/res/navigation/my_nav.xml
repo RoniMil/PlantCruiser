@@ -2,11 +2,11 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/gel_nav"
+    android:id="@+id/my_nav"
     app:startDestination="@id/mainMenuFragment">
     <fragment
         android:id="@+id/mainMenuFragment"
-        android:name="com.example.plantcruiser.MainMenuFragment"
+        android:name="com.example.plantcruiser.ui.MainMenuFragment"
         android:label="main_menu_fragment"
         tools:layout="@layout/main_menu_fragment" >
         <action
@@ -16,11 +16,12 @@
     </fragment>
     <fragment
         android:id="@+id/DBFragment"
-        android:name="com.example.plantcruiser.DBFragment"
+        android:name="com.example.plantcruiser.ui.DBFragment"
         android:label="db_menu_fragment"
         tools:layout="@layout/db_menu_fragment" >
         <action
             android:id="@+id/action_DBFragment_to_mainMenuFragment"
-            app:destination="@id/mainMenuFragment" />
+            app:destination="@id/mainMenuFragment"
+            app:popUpTo="@id/my_nav" />
     </fragment>
 </navigation>
