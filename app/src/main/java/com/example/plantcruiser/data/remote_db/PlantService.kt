@@ -1,6 +1,6 @@
 package com.example.plantcruiser.data.remote_db
 
-import com.example.plantcruiser.data.models.AllPlants
+import com.example.plantcruiser.data.models.PlantList
 import com.example.plantcruiser.data.models.Plant
 import retrofit2.Response
 import retrofit2.http.GET
@@ -11,7 +11,7 @@ interface PlantService {
 
     // retrieve 30 plants from the page numbered page from the API
     @GET("/species-list?")
-    suspend fun getPlants(@Query("key") key : String , @Query("page") page : Int) : Response<AllPlants>
+    suspend fun getPlants(@Query("key") key : String , @Query("page") page : Int) : Response<PlantList>
 
     // retrieve a specific plant with the API database ID from the API
     @GET("/species/details/{id}?")

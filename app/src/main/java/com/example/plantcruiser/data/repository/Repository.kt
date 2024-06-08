@@ -17,24 +17,24 @@ class Repository @Inject constructor(
 
 
 ){
-    fun getPlants(key : String, page : Int) = performFetchingAndSaving(
+    fun getPlants(page : Int) = performFetchingAndSaving(
         {plantLocalDataSource.getPlants()},
-        {plantRemoteDataSource.getPlants(key, page)},
-        {plantLocalDataSource.insertPlants(it.results)}
+        {plantRemoteDataSource.getPlants(page)},
+        {plantLocalDataSource.insertPlants(it.data)}
     )
 
-    fun getPlant(id : Int, key : String) = performFetchingAndSaving(
+    fun getPlant(id : Int) = performFetchingAndSaving(
         {plantLocalDataSource.getPlant(id)},
-        {plantRemoteDataSource.getPlant(id, key)},
+        {plantRemoteDataSource.getPlant(id)},
         {plantLocalDataSource.insertPlant(it)}
     )
 
-    fun getDiseases(key : String, page : Int) = performFetchingAndSaving(
+    fun getDiseases(page : Int) = performFetchingAndSaving(
         {diseaseLocalDataSource.getDiseases()},
-        {diseaseRemoteDataSource.getDiseases(key, page)},
-        {diseaseLocalDataSource.insertDiseases(it.results)}
+        {diseaseRemoteDataSource.getDiseases(page)},
+        {diseaseLocalDataSource.insertDiseases(it.data)}
     )
 
-    fun getDisease(id : Int, key : String) = diseaseLocalDataSource.getDisease(id)
+    fun getDisease(id : Int) = diseaseLocalDataSource.getDisease(id)
 
 }

@@ -1,6 +1,7 @@
 package com.example.plantcruiser.di
 
 import android.content.Context
+import androidx.lifecycle.MutableLiveData
 import com.example.plantcruiser.data.local_db.AppDatabase
 import com.example.plantcruiser.data.remote_db.DiseaseService
 import com.example.plantcruiser.data.remote_db.PlantService
@@ -16,9 +17,16 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
+
 @Module
 @InstallIn(SingletonComponent::class)
 object AppModule {
+
+    @Provides
+    @Singleton
+    fun provideCurrentPage(): MutableLiveData<Int> {
+        return MutableLiveData<Int>().apply { value = 1 }
+    }
 
     @Provides
     fun provideGson() : Gson = GsonBuilder().create()

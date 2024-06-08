@@ -1,4 +1,4 @@
-package com.example.plantcruiser.ui.allDBPlants
+package com.example.plantcruiser.ui.dbPlantList
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,13 +8,15 @@ import com.bumptech.glide.Glide
 import com.example.plantcruiser.data.models.Plant
 import com.example.plantcruiser.databinding.ItemPlantBinding
 
-class PlantsAdapter() :
+class PlantsAdapter(private val listener: PlantItemListener) :
     RecyclerView.Adapter<PlantsAdapter.PlantViewHolder>() {
 
     private val plants = ArrayList<Plant>()
 
-    class PlantViewHolder(private val itemBinding: ItemPlantBinding) :
-        RecyclerView.ViewHolder(itemBinding.root),
+    class PlantViewHolder(
+        private val itemBinding: ItemPlantBinding,
+        private val listener: PlantItemListener
+    ) : RecyclerView.ViewHolder(itemBinding.root),
         View.OnClickListener {
 
         private lateinit var plant: Plant
@@ -47,7 +49,7 @@ class PlantsAdapter() :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlantViewHolder {
         val binding = ItemPlantBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return PlantViewHolder(binding)
+        return PlantViewHolder(binding, listener)
     }
 
     override fun onBindViewHolder(holder: PlantViewHolder, position: Int) =
@@ -55,5 +57,10 @@ class PlantsAdapter() :
 
 
     override fun getItemCount() = plants.size
+
+
+    interface PlantItemListener {
+        fun onPlantClick(plantId : Int)
+    }
 
 }
