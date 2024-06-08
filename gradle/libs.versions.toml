@@ -30,6 +30,20 @@ lifecycleCommonJava8 = "2.8.1"
 lifecycleExtensions = "2.2.0"
 glide = "5.0.0-rc01"
 comGoogleDaggerHiltAndroidGradlePlugin = "2.51.1"
+hiltAndroidGradlePlugin = "2.51.1"
+kotlinKapt = "1.6"
+androidxLifecycleViewmodelKtx = "2.3.1"
+lifecycleLivedataKtxVersion = "2.3.1"
+lifecycleCommonJava8Version = "2.3.1"
+hiltLifecycleViewmodel = "1.0.0-alpha03"
+hiltAndroidCompilerVersion = "2.51.1"
+hiltCompilerVersion = "1.0.0"
+roomRuntimeVersion = "2.3.0"
+roomKtxVersion = "2.3.0"
+navigationFragmentKtxVersion = "2.3.5"
+navigationUiKtxVersion = "2.3.5"
+androidxRoomRuntime = "2.7.0-alpha03"
+androidxRoomKtx = "2.7.0-alpha03"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -70,6 +84,20 @@ androidx-lifecycle-common-java8 = { group = "androidx.lifecycle", name = "lifecy
 androidx-lifecycle-extensions = { group = "androidx.lifecycle", name = "lifecycle-extensions", version.ref = "lifecycleExtensions" }
 glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
 com-google-dagger-hilt-android-gradle-plugin = { group = "com.google.dagger.hilt.android", name = "com.google.dagger.hilt.android.gradle.plugin", version.ref = "comGoogleDaggerHiltAndroidGradlePlugin" }
+hilt-android-gradle-plugin = { group = "com.google.dagger", name = "hilt-android-gradle-plugin", version.ref = "hiltAndroidGradlePlugin" }
+kotlin-kapt = { group = "io.ebean.tile", name = "kotlin-kapt", version.ref = "kotlinKapt" }
+lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "androidxLifecycleViewmodelKtx" }
+lifecycle-livedata-ktx = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycleLivedataKtxVersion" }
+lifecycle-common-java8 = { group = "androidx.lifecycle", name = "lifecycle-common-java8", version.ref = "lifecycleCommonJava8Version" }
+androidx-hilt-lifecycle-viewmodel = { group = "androidx.hilt", name = "hilt-lifecycle-viewmodel", version.ref = "hiltLifecycleViewmodel" }
+dagger-hilt-android-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hiltAndroidCompilerVersion" }
+androidx-hilt-compiler = { group = "androidx.hilt", name = "hilt-compiler", version.ref = "hiltCompilerVersion" }
+room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "roomRuntimeVersion" }
+room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "roomKtxVersion" }
+navigation-fragment-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigationFragmentKtxVersion" }
+navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigationUiKtxVersion" }
+androidx-room-room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "androidxRoomRuntime" }
+androidx-room-room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "androidxRoomKtx" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

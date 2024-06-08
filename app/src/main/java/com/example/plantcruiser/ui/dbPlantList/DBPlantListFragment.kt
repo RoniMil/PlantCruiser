@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.example.plantcruiser.databinding.DbPlantListFragmentBinding
 import com.example.plantcruiser.utils.Loading
 import com.example.plantcruiser.utils.Success
+import com.example.plantcruiser.utils.Error
 import dagger.hilt.android.AndroidEntryPoint
 import androidx.navigation.fragment.findNavController
 import com.example.plantcruiser.R
