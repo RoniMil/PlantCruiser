@@ -33,4 +33,13 @@
     <string name="identified_plant">צמח מזוהה</string>
     <string name="percentage_of_correctness">אחוזי נכונות</string>
     <string name="plant_info">פרטי הצמח</string>
+    <string name="plant_id">מספר:</string>
+    <string name="plant_indoor">צמח ביתי:</string>
+    <string name="plant_edible">אכיל:</string>
+    <string name="plant_cycle">מחזוריות:</string>
+    <string name="plant_sunlight">אור שמש:</string>
+    <string name="plant_location">מיקום:</string>
+    <string name="plant_season">עונה:</string>
+    <string name="plant_watering">השקיה:</string>
+    <string name="plant_name">שם הצמח</string>
 </resources>

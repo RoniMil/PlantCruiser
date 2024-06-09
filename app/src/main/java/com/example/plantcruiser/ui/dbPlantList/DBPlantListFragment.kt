@@ -16,14 +16,14 @@ import com.example.plantcruiser.utils.Error
 import dagger.hilt.android.AndroidEntryPoint
 import androidx.navigation.fragment.findNavController
 import com.example.plantcruiser.R
+import com.example.plantcruiser.utils.autoCleared
 
 @AndroidEntryPoint
 class DBPlantListFragment : Fragment(), PlantsAdapter.PlantItemListener {
 
     private val viewModel: DBPlantListViewModel by viewModels()
 
-    private var _binding: DbPlantListFragmentBinding? = null
-    private val binding get() = _binding!!
+    private var binding : DbPlantListFragmentBinding by autoCleared()
 
     private lateinit var adapter: PlantsAdapter
 
@@ -32,7 +32,7 @@ class DBPlantListFragment : Fragment(), PlantsAdapter.PlantItemListener {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = DbPlantListFragmentBinding.inflate(inflater, container, false)
+        binding = DbPlantListFragmentBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -61,9 +61,15 @@ class DBPlantListFragment : Fragment(), PlantsAdapter.PlantItemListener {
 
         }
     }
+
+//    override fun onDestroyView() {
+//        super.onDestroyView()
+//        _binding = null
+//    }
+
     override fun onPlantClick(plantId: Int) {
         findNavController().navigate(
-            R.id.action_DBPlantListFragment_to_plantDetailFragment,
+            R.id.action_DBPlantListFragment_to_DBPlantDetailFragment,
             bundleOf("id" to plantId))
     }
 }

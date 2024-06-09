@@ -33,4 +33,14 @@
     <string name="identified_plant">Identified Plant</string>
     <string name="percentage_of_correctness">Percentage Of Correctness</string>
     <string name="plant_info">Plant Info</string>
+    <string name="plant_id">ID:</string>
+    <string name="plant_indoor">Indoor:</string>
+    <string name="plant_edible">Edible:</string>
+    <string name="plant_cycle">Cycle:</string>
+    <string name="plant_sunlight">Sunlight:</string>
+    <string name="plant_location">Location:</string>
+    <string name="plant_season">Season:</string>
+    <string name="plant_watering">Watering:</string>
+    <string name="plant_name">PLANT NAME</string>
+
 </resources>

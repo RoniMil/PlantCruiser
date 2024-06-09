@@ -28,17 +28,17 @@
             app:destination="@id/DBPlantListFragment" />
     </fragment>
     <fragment
-        android:id="@+id/plantDetailFragment"
-        android:name="com.example.plantcruiser.ui.dbPlantList.PlantDetailFragment"
-        android:label="plant_detail_fragment"
-        tools:layout="@layout/db_plant_details_fragment" />
-    <fragment
         android:id="@+id/DBPlantListFragment"
         android:name="com.example.plantcruiser.ui.dbPlantList.DBPlantListFragment"
         android:label="db_plant_list_fragment"
         tools:layout="@layout/db_plant_list_fragment" >
         <action
-            android:id="@+id/action_DBPlantListFragment_to_plantDetailFragment"
-            app:destination="@id/plantDetailFragment" />
+            android:id="@+id/action_DBPlantListFragment_to_DBPlantDetailFragment"
+            app:destination="@id/DBPlantDetailFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/DBPlantDetailFragment"
+        android:name="com.example.plantcruiser.ui.dbPlantList.DBPlantDetailsFragment"
+        android:label="db_plant_details_fragment"
+        tools:layout="@layout/db_plant_details_fragment" />
 </navigation>
