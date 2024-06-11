@@ -12,6 +12,9 @@
         <action
             android:id="@+id/action_mainMenuFragment_to_DBFragment"
             app:destination="@id/DBMenuFragment" />
+        <action
+            android:id="@+id/action_mainMenuFragment_to_languageDialogFragment"
+            app:destination="@id/languageDialogFragment" />
 
     </fragment>
     <fragment
@@ -41,4 +44,9 @@
         android:name="com.example.plantcruiser.ui.dbPlantList.DBPlantDetailsFragment"
         android:label="db_plant_details_fragment"
         tools:layout="@layout/db_plant_details_fragment" />
+    <dialog
+        android:id="@+id/languageDialogFragment"
+        android:name="com.example.plantcruiser.ui.dialogs.LanguageChangeDialogFragment"
+        android:label="language_change_dialog"
+        tools:layout="@layout/language_change_dialog" />
 </navigation>

@@ -25,6 +25,7 @@ class MainMenuFragment : Fragment() {
             findNavController().navigate(R.id.action_mainMenuFragment_to_DBFragment)
         }
         binding.languageButton.setOnClickListener {
+            findNavController().navigate(R.id.action_mainMenuFragment_to_languageDialogFragment)
 
         }
 
