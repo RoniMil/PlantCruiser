@@ -19,7 +19,7 @@
     <string name="pest_treatment">טיפול במזיקים</string>
     <string name="custom_reminder">תזכורת מותאמת אישית</string>
     <string name="plants">צמחים</string>
-    <string name="pests">מזיקים</string>
+    <string name="diseases">מחלות</string>
     <string name="environment_sensor">חיישן סביבה</string>
     <string name="manual_selection">בחירה ידנית</string>
     <string name="reminder_name">שם התזכורת</string>
@@ -45,4 +45,5 @@
     <string name="dialog_language_select">בחר שפה</string>
     <string name="dialog_accept">אישור</string>
     <string name="dialog_cancel">ביטול</string>
+    <string name="plants_db">מאגר צמחים</string>
 </resources>

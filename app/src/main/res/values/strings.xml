@@ -19,7 +19,7 @@
     <string name="pest_treatment">Pest treatment</string>
     <string name="custom_reminder">Custom reminder</string>
     <string name="plants">Plants</string>
-    <string name="pests">Pests</string>
+    <string name="diseases">Diseases</string>
     <string name="environment_sensor">Environment Sensor</string>
     <string name="manual_selection">Manual Selection</string>
     <string name="reminder_name">Reminder Name</string>
@@ -45,5 +45,6 @@
     <string name="dialog_language_select">Select language</string>
     <string name="dialog_accept">Accept</string>
     <string name="dialog_cancel">Cancel</string>
+    <string name="plants_db">Plants Database</string>
 
 </resources>

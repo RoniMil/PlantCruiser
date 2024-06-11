@@ -15,10 +15,10 @@
         android:text="@string/plants" />
 
     <Button
-        android:id="@+id/pestsButton"
+        android:id="@+id/diseasesButton"
         style="@style/CustomButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/pests" />
+        android:text="@string/diseases" />
 
 </LinearLayout>
