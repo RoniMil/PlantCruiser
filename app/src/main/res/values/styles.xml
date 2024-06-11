@@ -20,4 +20,10 @@
         <item name="iconTint">@color/black</item>
     </style>
 
+    <!-- style for dialog animations -->
+    <style name="DialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/dialog_in</item>
+        <item name="android:windowExitAnimation">@anim/dialog_out</item>
+    </style>
+
 </resources>

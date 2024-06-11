@@ -42,5 +42,8 @@
     <string name="plant_season">Season:</string>
     <string name="plant_watering">Watering:</string>
     <string name="plant_name">PLANT NAME</string>
+    <string name="dialog_language_select">Select language</string>
+    <string name="dialog_accept">Accept</string>
+    <string name="dialog_cancel">Cancel</string>
 
 </resources>

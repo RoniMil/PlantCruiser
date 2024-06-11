@@ -42,4 +42,7 @@
     <string name="plant_season">עונה:</string>
     <string name="plant_watering">השקיה:</string>
     <string name="plant_name">שם הצמח</string>
+    <string name="dialog_language_select">בחר שפה</string>
+    <string name="dialog_accept">אישור</string>
+    <string name="dialog_cancel">ביטול</string>
 </resources>

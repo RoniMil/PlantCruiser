@@ -24,6 +24,10 @@ class MainMenuFragment : Fragment() {
         binding.databaseButton.setOnClickListener{
             findNavController().navigate(R.id.action_mainMenuFragment_to_DBFragment)
         }
+        binding.languageButton.setOnClickListener {
+
+        }
+
         return binding.root
     }
 }

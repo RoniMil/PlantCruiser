@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- layout for the homescreen -->
+<?xml version="1.0" encoding="utf-8"?><!-- layout for the homescreen -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -11,14 +10,13 @@
     tools:context=".ui.MainMenuFragment">
 
     <Button
-        style="@style/CustomButton"
         android:id="@+id/languageButton"
+        style="@style/CustomButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end"
         android:text="@string/language"
-        app:icon="@drawable/lang_icon"
-        >
+        app:icon="@drawable/lang_icon">
 
     </Button>
 
@@ -34,8 +32,8 @@
     </TextView>
 
     <Button
-        style="@style/CustomButton"
         android:id="@+id/databaseButton"
+        style="@style/CustomButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/database">
@@ -43,8 +41,8 @@
     </Button>
 
     <Button
-        style="@style/CustomButton"
         android:id="@+id/myPlantsButton"
+        style="@style/CustomButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/my_plants">
@@ -52,8 +50,8 @@
     </Button>
 
     <Button
-        style="@style/CustomButton"
         android:id="@+id/suggestAPlantButton"
+        style="@style/CustomButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/suggest_a_plant">
@@ -61,8 +59,8 @@
     </Button>
 
     <Button
-        style="@style/CustomButton"
         android:id="@+id/plantFinderButton"
+        style="@style/CustomButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/plant_finder">
