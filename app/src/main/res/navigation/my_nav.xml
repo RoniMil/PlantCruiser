@@ -15,6 +15,9 @@
         <action
             android:id="@+id/action_mainMenuFragment_to_languageDialogFragment"
             app:destination="@id/languageDialogFragment" />
+        <action
+            android:id="@+id/action_mainMenuFragment_to_myPlantsFragment"
+            app:destination="@id/myPlantsFragment" />
 
     </fragment>
     <fragment
@@ -29,6 +32,10 @@
         <action
             android:id="@+id/action_DBMenuFragment_to_DBPlantListFragment"
             app:destination="@id/DBPlantListFragment" />
+        <action
+            android:id="@+id/action_DBMenuFragment_to_DBDiseaseListFragment"
+            app:destination="@id/DBDiseaseListFragment" />
+
     </fragment>
     <fragment
         android:id="@+id/DBPlantListFragment"
@@ -49,4 +56,14 @@
         android:name="com.example.plantcruiser.ui.dialogs.LanguageChangeDialogFragment"
         android:label="language_change_dialog"
         tools:layout="@layout/language_change_dialog" />
+    <fragment
+        android:id="@+id/myPlantsFragment"
+        android:name="com.example.plantcruiser.ui.MyPlantsFragment"
+        android:label="my_plants_fragment"
+        tools:layout="@layout/my_plants_fragment" />
+    <fragment
+        android:id="@+id/DBDiseaseListFragment"
+        android:name="com.example.plantcruiser.ui.dbDiseaseList.DBDiseaseListFragment"
+        android:label="db_disease_list_fragment"
+        tools:layout="@layout/db_disease_list_fragment" />
 </navigation>

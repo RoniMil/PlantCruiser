@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    tools:context=".ui.dbPlantList.DBPlantListFragment">
+    tools:context=".ui.dbDiseaseList.DBDiseaseListFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,12 +16,12 @@
         >
 
         <TextView
-            android:id="@+id/plantDBLabel"
+            android:id="@+id/myPlantsLabel"
             android:textAllCaps="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="8dp"
-            android:text="@string/plants_db"
+            android:text="@string/my_plants"
             android:textColor="@android:color/darker_gray"
             android:textSize="24sp"
             />

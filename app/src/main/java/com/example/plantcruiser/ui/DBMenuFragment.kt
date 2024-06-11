@@ -22,7 +22,11 @@ class DBMenuFragment : Fragment() {
         _binding = DbMenuFragmentBinding.inflate(inflater,container,false)
 
         binding.plantsButton.setOnClickListener{
-            findNavController().navigate(R.id.action_DBFragment_to_mainMenuFragment)
+            findNavController().navigate(R.id.action_DBMenuFragment_to_DBPlantListFragment)
+        }
+
+        binding.diseasesButton.setOnClickListener {
+            findNavController().navigate(R.id.action_DBMenuFragment_to_DBDiseaseListFragment)
         }
 
         return binding.root

@@ -21,13 +21,19 @@ class MainMenuFragment : Fragment() {
     ): View? {
         _binding = MainMenuFragmentBinding.inflate(inflater,container,false)
 
-        binding.databaseButton.setOnClickListener{
-            findNavController().navigate(R.id.action_mainMenuFragment_to_DBFragment)
-        }
         binding.languageButton.setOnClickListener {
             findNavController().navigate(R.id.action_mainMenuFragment_to_languageDialogFragment)
 
         }
+
+        binding.databaseButton.setOnClickListener{
+            findNavController().navigate(R.id.action_mainMenuFragment_to_DBFragment)
+        }
+
+        binding.myPlantsButton.setOnClickListener {
+            findNavController().navigate(R.id.action_mainMenuFragment_to_myPlantsFragment)
+        }
+
 
         return binding.root
     }
