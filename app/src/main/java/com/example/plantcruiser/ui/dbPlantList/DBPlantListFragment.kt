@@ -9,6 +9,7 @@ import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.plantcruiser.databinding.DbPlantListFragmentBinding
 import com.example.plantcruiser.utils.Loading
@@ -45,10 +46,10 @@ class DBPlantListFragment : Fragment(), PlantsAdapter.PlantItemListener {
             }
         }
 
-        binding.prevPageButton.setOnClickListener {
+        binding.nextPageButton.setOnClickListener {
             // Decrease the current page safely
             viewModel.currentPlantDBPage.value?.let { currentPage ->
-                if (currentPage > 1) {
+                if (currentPage < Constants.MAX_PLANT_PAGE) {
                     viewModel.updateGlobalVariable(currentPage + 1)
                 }
             }
@@ -67,30 +68,29 @@ class DBPlantListFragment : Fragment(), PlantsAdapter.PlantItemListener {
         binding.recyclerViewPlants.layoutManager = GridLayoutManager(requireContext(), 3)
         binding.recyclerViewPlants.adapter = adapter
 
-        viewModel.plants.observe(viewLifecycleOwner) {
-            when (it.status) {
-                is Loading -> binding.progressBar.visibility = View.VISIBLE
-                is Success -> {
-                    binding.progressBar.visibility = View.GONE
-                    adapter.setPlants(it.status.data!!)
-                }
+        viewModel.plants.observe(viewLifecycleOwner) { resource ->
+            resource?.let {
+                when (it.status) {
+                    is Loading -> {
+                        binding.progressBar.visibility = View.VISIBLE
+                    }
 
-                is Error -> {
-                    binding.progressBar.visibility = View.GONE
-                    Toast.makeText(requireContext(), it.status.message, Toast.LENGTH_LONG)
-                        .show()
-                }
+                    is Success -> {
+                        binding.progressBar.visibility = View.GONE
+                        adapter.setPlants(it.status.data ?: emptyList())
+                    }
 
+                    is Error -> {
+                        binding.progressBar.visibility = View.GONE
+                        Toast.makeText(requireContext(), it.status.message, Toast.LENGTH_LONG)
+                            .show()
+                    }
+
+                }
             }
-
-
         }
     }
 
-//    override fun onDestroyView() {
-//        super.onDestroyView()
-//        _binding = null
-//    }
 
     override fun onPlantClick(plantId: Int) {
         findNavController().navigate(
@@ -99,8 +99,11 @@ class DBPlantListFragment : Fragment(), PlantsAdapter.PlantItemListener {
         )
     }
 
+        }
 
-}
+
+
+
 
 
 
