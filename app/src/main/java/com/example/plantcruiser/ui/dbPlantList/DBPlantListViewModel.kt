@@ -26,7 +26,6 @@ class DBPlantListViewModel @Inject constructor(repository : Repository, private 
         }
     }
 
-
     fun updateGlobalVariable(newValue: Int) {
         currentPage.value = newValue
     }

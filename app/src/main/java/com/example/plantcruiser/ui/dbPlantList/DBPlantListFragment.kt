@@ -17,6 +17,7 @@ import com.example.plantcruiser.utils.Success
 import com.example.plantcruiser.utils.Error
 import dagger.hilt.android.AndroidEntryPoint
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.RecyclerView
 import com.example.plantcruiser.R
 import com.example.plantcruiser.utils.Constants
 import com.example.plantcruiser.utils.autoCleared
@@ -37,23 +38,21 @@ class DBPlantListFragment : Fragment(), PlantsAdapter.PlantItemListener {
     ): View? {
         binding = DbPlantListFragmentBinding.inflate(inflater, container, false)
 
-        binding.prevPageButton.setOnClickListener {
-            // Decrease the current page safely
-            viewModel.currentPlantDBPage.value?.let { currentPage ->
-                if (currentPage > 1) {
-                    viewModel.updateGlobalVariable(currentPage - 1)
-                }
-            }
-        }
+        binding.recyclerViewPlants.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
+                super.onScrollStateChanged(recyclerView, newState)
+                if (!recyclerView.canScrollVertically(1)) {
+                    viewModel.currentPlantDBPage.value?.let { currentPage ->
+                        if (currentPage < Constants.MAX_PLANT_PAGE) {
+                            viewModel.updateGlobalVariable(currentPage + 1)
+                        }
 
-        binding.nextPageButton.setOnClickListener {
-            // Decrease the current page safely
-            viewModel.currentPlantDBPage.value?.let { currentPage ->
-                if (currentPage < Constants.MAX_PLANT_PAGE) {
-                    viewModel.updateGlobalVariable(currentPage + 1)
+                    }
                 }
+
             }
-        }
+
+        })
 
 
         return binding.root
@@ -99,7 +98,7 @@ class DBPlantListFragment : Fragment(), PlantsAdapter.PlantItemListener {
         )
     }
 
-        }
+}
 
 
 
