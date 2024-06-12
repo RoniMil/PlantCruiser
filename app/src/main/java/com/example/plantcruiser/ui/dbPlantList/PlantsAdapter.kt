@@ -27,10 +27,9 @@ class PlantsAdapter(private val listener: PlantItemListener) :
 
         fun bind(item: Plant) {
             this.plant = item
-            itemBinding.plantName.text = item.name
+            itemBinding.plantName.text = item.common_name
             Glide.with(itemBinding.root)
-                .load(item.image)
-                .circleCrop()
+                .load(item.default_image?.regular_url)
                 .into(itemBinding.plantImage)
         }
 

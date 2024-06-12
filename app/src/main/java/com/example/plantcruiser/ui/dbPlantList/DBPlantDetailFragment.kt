@@ -17,7 +17,7 @@ import com.example.plantcruiser.utils.Loading
 import com.example.plantcruiser.utils.Success
 
 @AndroidEntryPoint
-class DBPlantFragment : Fragment() {
+class DBPlantDetailFragment : Fragment() {
     private val viewModel : DBPlantViewModel by viewModels()
 
     private var binding : DbPlantDetailsFragmentBinding by autoCleared()
@@ -53,16 +53,12 @@ class DBPlantFragment : Fragment() {
         }
     }
     private fun updatePlant(plant: Plant) {
-        binding.plantName.text = plant.name
+        binding.plantName.text = plant.common_name
         binding.plantIdText.text = plant.id.toString()
-        binding.plantIndoorText.text = plant.indoor.toString()
-        binding.plantEdibleText.text = plant.edible.toString()
         binding.plantCycleText.text = plant.cycle
-        binding.plantSunlightText.text = plant.sunlight
-        binding.plantLocationText.text = plant.location
-        binding.plantSeasonText.text = plant.season
+        binding.plantSunlightText.text = plant.sunlight.toString()
         binding.plantWateringText.text = plant.watering
-        Glide.with(requireContext()).load(plant.image).circleCrop().into(binding.plantImage)
+        Glide.with(requireContext()).load(plant.default_image?.regular_url).circleCrop().into(binding.plantImage)
     }
 
 }

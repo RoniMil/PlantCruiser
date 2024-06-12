@@ -5,6 +5,7 @@ import com.example.plantcruiser.data.local_db.PlantDao
 import com.example.plantcruiser.data.remote_db.DiseaseRemoteDataSource
 import com.example.plantcruiser.data.remote_db.PlantRemoteDataSource
 import com.example.plantcruiser.utils.performFetchingAndSaving
+import com.example.plantcruiser.utils.performFetching
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -23,11 +24,7 @@ class Repository @Inject constructor(
         {plantLocalDataSource.insertPlants(it.data)}
     )
 
-    fun getPlant(id : Int) = performFetchingAndSaving(
-        {plantLocalDataSource.getPlant(id)},
-        {plantRemoteDataSource.getPlant(id)},
-        {plantLocalDataSource.insertPlant(it)}
-    )
+    fun getPlant(id : Int) = performFetching { plantLocalDataSource.getPlant(id) }
 
     fun getDiseases(page : Int) = performFetchingAndSaving(
         {diseaseLocalDataSource.getDiseases()},

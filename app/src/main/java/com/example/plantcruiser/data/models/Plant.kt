@@ -7,16 +7,15 @@ import androidx.room.PrimaryKey
 data class Plant(
     @PrimaryKey
     val id : Int,
-    val name : String,
-    val image : String,
-    val indoor : Boolean,
-    val edible : Boolean,
+    val common_name : String,
+    val default_image: DefaultImage?,
     val cycle : String,
-    val sunlight: String,
-    val location : String,
-    val season : String,
+    val sunlight: List<String>,
     val watering : String
 
-
-
 )
+
+data class DefaultImage(
+    val regular_url : String?
+)
+

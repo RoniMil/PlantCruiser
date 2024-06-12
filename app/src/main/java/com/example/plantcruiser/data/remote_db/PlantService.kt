@@ -10,11 +10,11 @@ import retrofit2.http.Query
 interface PlantService {
 
     // retrieve 30 plants from the page numbered page from the API
-    @GET("/species-list?")
+    @GET("species-list?")
     suspend fun getPlants(@Query("key") key : String , @Query("page") page : Int) : Response<PlantList>
 
-    // retrieve a specific plant with the API database ID from the API
-    @GET("/species/details/{id}?")
-    suspend fun getPlant(@Path("id") id : Int, @Query("key") key : String) : Response<Plant>
+//    // retrieve a specific plant with the API database ID from the API
+//    @GET("/species/details/{id}?")
+//    suspend fun getPlant(@Path("id") id : Int, @Query("key") key : String) : Response<Plant>
 
 }
