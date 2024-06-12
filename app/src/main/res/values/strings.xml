@@ -46,5 +46,8 @@
     <string name="dialog_accept">Accept</string>
     <string name="dialog_cancel">Cancel</string>
     <string name="plants_db">Plants Database</string>
+    <string name="previous_page">Previous</string>
+    <string name="next_page">Next</string>
+    <string name="diseases_database">Diseases Database</string>
 
 </resources>

@@ -13,21 +13,22 @@
         android:orientation="vertical"
         android:padding="16dp"
         android:gravity="center"
+
         >
 
         <TextView
-            android:id="@+id/myPlantsLabel"
+            android:id="@+id/diseaseDBLabel"
             android:textAllCaps="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="8dp"
-            android:text="@string/my_plants"
+            android:text="@string/diseases_database"
             android:textColor="@android:color/darker_gray"
             android:textSize="24sp"
             />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewPlants"
+            android:id="@+id/recyclerViewDiseases"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"/>
@@ -39,6 +40,33 @@
             android:gravity="center"
             android:indeterminate="true"
             android:visibility="gone"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="24dp"
+            android:layoutDirection="locale">
+
+            <Button
+                style="@style/CustomButton"
+                android:id="@+id/prevPageButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/previous_page"
+                android:layout_marginEnd="8dp"/>
+
+            <Button
+                style="@style/CustomButton"
+                android:id="@+id/nextPageButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/next_page"
+                android:layout_marginStart="8dp"/>
+        </LinearLayout>
 
 
 

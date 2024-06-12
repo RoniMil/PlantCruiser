@@ -46,4 +46,7 @@
     <string name="dialog_accept">אישור</string>
     <string name="dialog_cancel">ביטול</string>
     <string name="plants_db">מאגר צמחים</string>
+    <string name="previous_page">עמוד קודם</string>
+    <string name="next_page">עמוד הבא</string>
+    <string name="diseases_database">מאגר מחלות</string>
 </resources>

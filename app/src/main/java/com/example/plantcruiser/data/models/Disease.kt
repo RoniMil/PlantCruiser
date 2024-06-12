@@ -7,9 +7,8 @@ import androidx.room.PrimaryKey
 data class Disease(
     @PrimaryKey
     val id : Int,
-    val name : String,
-    val image : String,
-    val host : String,
-    val description : String,
-    val solution : String
+    val common_name : String,
+    val images : Images?,
+    val host : List<String>,
 )
+
