@@ -46,11 +46,6 @@
             android:id="@+id/action_DBPlantListFragment_to_DBPlantDetailFragment"
             app:destination="@id/DBPlantDetailFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/DBPlantDetailFragment"
-        android:name="com.example.plantcruiser.ui.dbPlantList.DBPlantDetailsFragment"
-        android:label="db_plant_details_fragment"
-        tools:layout="@layout/db_plant_details_fragment" />
     <dialog
         android:id="@+id/languageDialogFragment"
         android:name="com.example.plantcruiser.ui.dialogs.LanguageChangeDialogFragment"
@@ -66,4 +61,9 @@
         android:name="com.example.plantcruiser.ui.dbDiseaseList.DBDiseaseListFragment"
         android:label="db_disease_list_fragment"
         tools:layout="@layout/db_disease_list_fragment" />
+    <fragment
+        android:id="@+id/DBPlantDetailFragment"
+        android:name="com.example.plantcruiser.ui.dbPlantList.DBPlantDetailFragment"
+        android:label="db_plant_details_fragment"
+        tools:layout="@layout/db_plant_details_fragment" />
 </navigation>

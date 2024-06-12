@@ -21,7 +21,6 @@ class LanguageChangeDialogFragment : DialogFragment() {
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         return activity?.let {
 
-            val inflater = requireActivity().layoutInflater
             _binding = LanguageChangeDialogBinding.inflate(LayoutInflater.from(context))
 
             val builder = AlertDialog.Builder(it)

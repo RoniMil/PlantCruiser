@@ -6,6 +6,17 @@ import androidx.lifecycle.liveData
 import androidx.lifecycle.map
 import kotlinx.coroutines.Dispatchers
 
+fun <T> performFetching(
+    localDbFetch: () -> LiveData<T>
+): LiveData<Resource<T>> = liveData(Dispatchers.IO) {
+
+    emit(Resource.loading())
+    val source = localDbFetch().map { Resource.success(it) }
+    emitSource(source)
+
+}
+
+
 fun <T, A> performFetchingAndSaving(
     localDbFetch: () -> LiveData<T>,
     remoteDbFetch: suspend () -> Resource<A>,
