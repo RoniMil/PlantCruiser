@@ -1,45 +1,30 @@
 package com.example.plantcruiser.data.local_db
 
 import androidx.room.TypeConverter
-import com.example.plantcruiser.data.models.DefaultImage
+import com.example.plantcruiser.data.models.Images
 import com.google.gson.Gson
-import com.google.gson.JsonObject
 import com.google.gson.reflect.TypeToken
 
 class Converters {
 
     private val gson = Gson()
 
-//    @TypeConverter
-//    fun fromDefaultImageMap(defaultImageMap: Map<String, String>): String? {
-//        return defaultImageMap["regular_url"]
-//    }
-//
-//    @TypeConverter
-//    fun toDefaultImageMap(regularUrl: String?): Map<String, String> {
-//        val map = mutableMapOf<String, String>()
-//        map["regular_url"] = "shimi"
-////        if (regularUrl != null) {
-////            map["regular_url"] = regularUrl
-////        }
-//        return map
-//    }
     @TypeConverter
-     fun fromDefaultImage(defaultImage : DefaultImage?) : String? {
-        return defaultImage?.regular_url
+    fun fromImages(images : Images?) : String? {
+        return images?.regular_url
     }
 
     @TypeConverter
-    fun toDefaultImage(regular_url : String?) : DefaultImage {
-        return DefaultImage(regular_url = regular_url)
+    fun toImages(regular_url : String?) : Images {
+        return Images(regular_url = regular_url)
     }
 
     @TypeConverter
-    fun fromSunlightList(sunlightList: List<String>?): String? {
-        if (sunlightList == null) {
+    fun fromStringList(list: List<String>?): String? {
+        if (list == null) {
             return null
         }
-        return gson.toJson(sunlightList)
+        return gson.toJson(list)
     }
 
     @TypeConverter

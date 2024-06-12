@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.LiveData
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.plantcruiser.databinding.DbPlantListFragmentBinding
 import com.example.plantcruiser.utils.Loading
@@ -16,6 +17,7 @@ import com.example.plantcruiser.utils.Error
 import dagger.hilt.android.AndroidEntryPoint
 import androidx.navigation.fragment.findNavController
 import com.example.plantcruiser.R
+import com.example.plantcruiser.utils.Constants
 import com.example.plantcruiser.utils.autoCleared
 
 @AndroidEntryPoint
@@ -23,7 +25,7 @@ class DBPlantListFragment : Fragment(), PlantsAdapter.PlantItemListener {
 
     private val viewModel: DBPlantListViewModel by viewModels()
 
-    private var binding : DbPlantListFragmentBinding by autoCleared()
+    private var binding: DbPlantListFragmentBinding by autoCleared()
 
     private lateinit var adapter: PlantsAdapter
 
@@ -33,8 +35,31 @@ class DBPlantListFragment : Fragment(), PlantsAdapter.PlantItemListener {
         savedInstanceState: Bundle?
     ): View? {
         binding = DbPlantListFragmentBinding.inflate(inflater, container, false)
+
+        binding.prevPageButton.setOnClickListener {
+            // Decrease the current page safely
+            viewModel.currentPlantDBPage.value?.let { currentPage ->
+                if (currentPage > 1) {
+                    viewModel.updateGlobalVariable(currentPage - 1)
+                }
+            }
+        }
+
+        binding.prevPageButton.setOnClickListener {
+            // Decrease the current page safely
+            viewModel.currentPlantDBPage.value?.let { currentPage ->
+                if (currentPage > 1) {
+                    viewModel.updateGlobalVariable(currentPage + 1)
+                }
+            }
+        }
+
+
         return binding.root
+
+
     }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -70,8 +95,11 @@ class DBPlantListFragment : Fragment(), PlantsAdapter.PlantItemListener {
     override fun onPlantClick(plantId: Int) {
         findNavController().navigate(
             R.id.action_DBPlantListFragment_to_DBPlantDetailFragment,
-            bundleOf("id" to plantId))
+            bundleOf("id" to plantId)
+        )
     }
+
+
 }
 
 
