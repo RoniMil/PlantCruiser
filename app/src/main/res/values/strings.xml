@@ -48,7 +48,7 @@
     <string name="plants_db">Plants Database</string>
     <string name="previous_page">Previous</string>
     <string name="next_page">Next</string>
-    <string name="diseases_database">Diseases Database</string>
+    <string name="diseases_db">Disease Database</string>
     <string name="perennial">perennial</string>
     <string name="annual">annual</string>
     <string name="biennial">biennial</string>
@@ -61,5 +61,5 @@
     <string name="part_shade">part shade</string>
     <string name="sun_part_shade">sun-part shade</string>
     <string name="full_sun">full sun</string>
-    <string name="Herbaceous_Perennial">Herbaceous Perennial</string>
+    <string name="herbaceous_perennial">herbaceous perennial</string>
 </resources>

@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.compose.ui.text.toLowerCase
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.bumptech.glide.Glide
@@ -16,6 +17,7 @@ import com.example.plantcruiser.utils.autoCleared
 import com.example.plantcruiser.utils.Error
 import com.example.plantcruiser.utils.Loading
 import com.example.plantcruiser.utils.Success
+import java.util.Locale
 
 @AndroidEntryPoint
 class DBPlantDetailFragment : Fragment() {
@@ -60,7 +62,6 @@ class DBPlantDetailFragment : Fragment() {
     private fun updatePlant(plant: Plant) {
         binding.plantName.text = plant.common_name
         binding.plantIdText.text = plant.id.toString()
-
         binding.plantCycleText.text = getCycle(plant.cycle)
         binding.plantSunlightText.text = getSunlight(plant.sunlight)
         binding.plantWateringText.text = getWatering(plant.watering)
@@ -69,45 +70,42 @@ class DBPlantDetailFragment : Fragment() {
     }
 
     // helper function for localization of cycle values
-    private fun getCycle(cycle: String): String? {
-        return when (cycle) {
-            "Perennial" -> getString(R.string.perennial)
-            "Annual" -> getString(R.string.annual)
-            "Biennial" -> getString(R.string.biennial)
-            "Biannual" -> getString(R.string.biannual)
-            else -> null
+    private fun getCycle(cycle: String): String {
+        return when (cycle.lowercase()) {
+            "perennial" -> getString(R.string.perennial)
+            "herbaceous perennial" -> getString(R.string.herbaceous_perennial)
+            "annual" -> getString(R.string.annual)
+            "biennial" -> getString(R.string.biennial)
+            else -> getString(R.string.biannual)
         }
     }
 
     // helper function for localization of watering values
-    private fun getWatering(watering: String): String? {
-        return when (watering) {
-            "Frequent" -> getString(R.string.frequent)
-            "Average" -> getString(R.string.average)
-            "Minimum" -> getString(R.string.minimum)
-            "None" -> getString(R.string.none)
-            else -> null
+    private fun getWatering(watering: String): String {
+        return when (watering.lowercase()) {
+            "frequent" -> getString(R.string.frequent)
+            "average" -> getString(R.string.average)
+            "none" -> getString(R.string.none)
+            else -> getString(R.string.minimum)
         }
     }
 
+    // helper function for localization of sunlight values
     private fun getSunlight(sunlightList: List<String>): String {
-        return sunlightList.mapNotNull { sunlight ->
-            when (sunlight) {
-                "full shade" -> getString(R.string.full_shade)
-                "part shade" -> getString(R.string.part_shade)
-                "sun-part shade" -> getString(R.string.sun_part_shade)
-                "full sun" -> getString(R.string.full_sun)
-                else -> null
+        return sunlightList.joinToString(separator = ", ") { sunlight ->
+            when (sunlight.lowercase()) {
+                in listOf("full shade", "sheltered") -> getString(R.string.full_shade)
+                in listOf(
+                    "part shade",
+                    "filtered shade",
+                    "deep shade"
+                ) -> getString(R.string.part_shade)
+
+                "part sun/part shade" -> getString(R.string.sun_part_shade)
+                else -> getString(R.string.full_sun)
             }
-        }.joinToString(separator = ", ")
+        }
     }
-
-
-
-
-
-
-
 
 
 }

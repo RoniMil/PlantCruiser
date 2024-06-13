@@ -22,7 +22,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="8dp"
-            android:text="@string/diseases_database"
+            android:text="@string/diseases_db"
             android:textColor="@android:color/darker_gray"
             android:textSize="24sp"
             />

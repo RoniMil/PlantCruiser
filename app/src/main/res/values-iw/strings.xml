@@ -48,7 +48,7 @@
     <string name="plants_db">מאגר צמחים</string>
     <string name="previous_page">עמוד קודם</string>
     <string name="next_page">עמוד הבא</string>
-    <string name="diseases_database">מאגר מחלות</string>
+    <string name="diseases_db">מאגר מחלות</string>
     <string name="perennial">רב שנתי</string>
     <string name="annual">שנתי</string>
     <string name="biennial">דו שנתי</string>
@@ -61,5 +61,5 @@
     <string name="part_shade">צל חלקי</string>
     <string name="sun_part_shade">שמש חלקית</string>
     <string name="full_sun">שמש מלאה</string>
-    <string name="Herbaceous_Perennial">רב שנתי עשבוני</string>
+    <string name="herbaceous_perennial">רב שנתי עשבוני</string>
 </resources>
