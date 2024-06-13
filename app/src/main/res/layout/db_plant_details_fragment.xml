@@ -41,7 +41,7 @@
             app:layout_constraintTop_toBottomOf="@id/plant_image" />
 
         <TextView
-            android:id="@+id/plant_id_text"
+            android:id="@+id/plant_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="60dp"
@@ -52,7 +52,7 @@
             app:layout_constraintTop_toBottomOf="@+id/plant_name" />
 
         <TextView
-            android:id="@+id/plant_id"
+            android:id="@+id/plant_id_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -61,50 +61,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/plant_name" />
 
-        <TextView
-            android:id="@+id/plant_indoor_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="60dp"
-            android:layout_marginTop="10dp"
-            android:text="@string/plant_indoor"
-            tools:text="Indoor"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/plant_id_text" />
+
 
         <TextView
-            android:id="@+id/plant_indoor"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="60dp"
-            tools:text="TEXTVIEW"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/plant_id" />
-
-        <TextView
-            android:id="@+id/plant_edible_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="60dp"
-            android:layout_marginTop="10dp"
-            android:text="@string/plant_edible"
-            tools:text="Edible"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/plant_indoor_text" />
-
-        <TextView
-            android:id="@+id/plant_edible"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="60dp"
-            tools:text="TEXTVIEW"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/plant_indoor" />
-
-        <TextView
-            android:id="@+id/plant_cycle_text"
+            android:id="@+id/plant_cycle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="60dp"
@@ -112,20 +72,20 @@
             android:text="@string/plant_cycle"
             tools:text="Cycle"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/plant_edible_text" />
+            app:layout_constraintTop_toBottomOf="@+id/plant_id" />
 
         <TextView
-            android:id="@+id/plant_cycle"
+            android:id="@+id/plant_cycle_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="60dp"
             tools:text="TEXTVIEW"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/plant_edible" />
+            app:layout_constraintTop_toBottomOf="@+id/plant_id_text" />
 
         <TextView
-            android:id="@+id/plant_sunlight_text"
+            android:id="@+id/plant_sunlight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="60dp"
@@ -133,62 +93,21 @@
             android:text="@string/plant_sunlight"
             tools:text="Sunlight"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/plant_cycle_text" />
-
-        <TextView
-            android:id="@+id/plant_sunlight"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="60dp"
-            tools:text="TEXTVIEW"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/plant_cycle" />
 
         <TextView
-            android:id="@+id/plant_location_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="60dp"
-            android:layout_marginTop="10dp"
-            android:text="@string/plant_location"
-            tools:text="Location"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/plant_sunlight_text" />
-
-        <TextView
-            android:id="@+id/plant_location"
+            android:id="@+id/plant_sunlight_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="60dp"
             tools:text="TEXTVIEW"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/plant_sunlight" />
+            app:layout_constraintTop_toBottomOf="@+id/plant_cycle_text" />
+
 
         <TextView
-            android:id="@+id/plant_season_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="60dp"
-            android:layout_marginTop="10dp"
-            android:text="@string/plant_season"
-            tools:text="Season"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/plant_location_text" />
-
-        <TextView
-            android:id="@+id/plant_season"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="60dp"
-            tools:text="TEXTVIEW"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/plant_location" />
-
-        <TextView
-            android:id="@+id/plant_watering_text"
+            android:id="@+id/plant_watering"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="60dp"
@@ -196,17 +115,17 @@
             android:text="@string/plant_watering"
             tools:text="Watering"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/plant_season_text" />
+            app:layout_constraintTop_toBottomOf="@+id/plant_sunlight" />
 
         <TextView
-            android:id="@+id/plant_watering"
+            android:id="@+id/plant_watering_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="60dp"
             tools:text="TEXTVIEW"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/plant_season" />
+            app:layout_constraintTop_toBottomOf="@+id/plant_sunlight_text" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

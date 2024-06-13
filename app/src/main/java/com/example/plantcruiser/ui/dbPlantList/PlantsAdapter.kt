@@ -34,7 +34,7 @@ class PlantsAdapter(private val listener: PlantItemListener) :
         }
 
         override fun onClick(v: View?) {
-
+            listener.onPlantClick(plant.id)
         }
 
 
