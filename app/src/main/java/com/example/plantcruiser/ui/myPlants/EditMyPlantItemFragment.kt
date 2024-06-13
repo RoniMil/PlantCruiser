@@ -1,4 +1,6 @@
 package com.example.plantcruiser.ui.myPlants
 
-class EditMyPlantItemFragment {
+import androidx.fragment.app.Fragment
+
+class EditMyPlantItemFragment : Fragment() {
 }

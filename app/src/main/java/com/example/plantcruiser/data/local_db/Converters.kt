@@ -1,9 +1,12 @@
 package com.example.plantcruiser.data.local_db
 
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import androidx.room.TypeConverter
 import com.example.plantcruiser.data.models.Images
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import java.io.ByteArrayOutputStream
 
 class Converters {
 
@@ -35,5 +38,19 @@ class Converters {
         val listType = object : TypeToken<List<String>>() {}.type
         return gson.fromJson(data, listType)
     }
+
+
+    @TypeConverter
+    fun fromBitmap(bitmap: Bitmap): ByteArray {
+        val stream = ByteArrayOutputStream()
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream)
+        return stream.toByteArray()
+    }
+
+    @TypeConverter
+    fun toBitmap(byteArray: ByteArray): Bitmap {
+        return BitmapFactory.decodeByteArray(byteArray, 0, byteArray.size)
+    }
+
 }
 

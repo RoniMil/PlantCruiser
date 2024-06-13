@@ -26,34 +26,12 @@
             android:textSize="24sp"
             />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <Button
-                style="@style/CustomButton"
-                android:id="@+id/editButton"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/add_plant"
-                android:layout_marginEnd="8dp"/>
-
-            <Button
-                style="@style/CustomButton"
-                android:id="@+id/setReminderButton"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/edit_plant"
-                android:layout_marginStart="8dp"/>
-
-        </LinearLayout>
         <Button
             style="@style/CustomButton"
-            android:id="@+id/removeButton"
+            android:id="@+id/addButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/remove_plant"
+            android:text="@string/add_plant"
             android:layout_marginTop="8dp"
             android:layout_gravity="center"/>
 

@@ -27,12 +27,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            tools:text="TEXTVIEW"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/plant_image" />
+            app:layout_constraintTop_toBottomOf="@id/plant_image"
+            tools:text="TEXTVIEW" />
 
 
         <TextView
@@ -51,9 +51,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="60dp"
-            tools:text="TEXTVIEW"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/plant_name" />
+            app:layout_constraintTop_toBottomOf="@+id/plant_name"
+            tools:text="TEXTVIEW" />
 
         <TextView
             android:id="@+id/plant_sunlight"
@@ -71,9 +71,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="60dp"
-            tools:text="TEXTVIEW"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/planting_date_text" />
+            app:layout_constraintTop_toBottomOf="@+id/planting_date_text"
+            tools:text="TEXTVIEW" />
 
         <TextView
             android:id="@+id/plant_watering"
@@ -91,9 +91,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="60dp"
-            tools:text="TEXTVIEW"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/plant_sunlight_text" />
+            app:layout_constraintTop_toBottomOf="@+id/plant_sunlight_text"
+            tools:text="TEXTVIEW" />
 
         <TextView
             android:id="@+id/plant_fertilizing_frequency"
@@ -111,9 +111,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="60dp"
-            tools:text="TEXTVIEW"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/plant_watering_text" />
+            app:layout_constraintTop_toBottomOf="@+id/plant_watering_text"
+            tools:text="TEXTVIEW" />
 
         <TextView
             android:id="@+id/plant_disease"
@@ -131,9 +131,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="60dp"
-            tools:text="TEXTVIEW"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/plant_fertilizing_frequency_text" />
+            app:layout_constraintTop_toBottomOf="@+id/plant_fertilizing_frequency_text"
+            tools:text="TEXTVIEW" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -141,31 +141,31 @@
         android:id="@+id/buttonsLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/plant_cl"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="32dp">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/plant_cl">
 
         <Button
-            style="@style/CustomButton"
             android:id="@+id/removeButton"
+            style="@style/CustomButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/remove_plant"
+            android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"/>
+            android:layout_weight="1"
+            android:text="@string/remove_plant" />
 
         <Button
-            style="@style/CustomButton"
             android:id="@+id/editButton"
+            style="@style/CustomButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/edit_plant"
+            android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"/>
+            android:layout_weight="1"
+            android:text="@string/edit_plant" />
     </LinearLayout>
 
 

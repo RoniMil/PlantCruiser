@@ -63,7 +63,18 @@
         android:id="@+id/myPlantsFragment"
         android:name="com.example.plantcruiser.ui.myPlants.MyPlantsFragment"
         android:label="my_plants_fragment"
-        tools:layout="@layout/my_plants_fragment" />
+        tools:layout="@layout/my_plants_fragment" >
+        <action
+            android:id="@+id/action_myPlantsFragment_to_myPlantItemFragment"
+            app:destination="@id/myPlantItemFragment"
+            app:popUpTo="@id/myPlantsFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_myPlantsFragment_to_addMyPlantItemFragment"
+            app:destination="@id/addMyPlantItemFragment"
+            app:popUpTo="@id/myPlantsFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
     <fragment
         android:id="@+id/DBDiseaseListFragment"
         android:name="com.example.plantcruiser.ui.dbDiseaseList.DBDiseaseListFragment"
@@ -74,4 +85,33 @@
         android:name="com.example.plantcruiser.ui.dbPlantList.DBPlantDetailFragment"
         android:label="db_plant_details_fragment"
         tools:layout="@layout/db_plant_details_fragment" />
+    <fragment
+        android:id="@+id/myPlantItemFragment"
+        android:name="com.example.plantcruiser.ui.myPlants.MyPlantItemFragment"
+        android:label="my_plant_item_fragment"
+        tools:layout="@layout/my_plant_item_fragment" >
+        <action
+            android:id="@+id/action_myPlantItemFragment_to_editMyPlantItemFragment"
+            app:destination="@id/editMyPlantItemFragment"
+            app:popUpTo="@id/myPlantItemFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/addMyPlantItemFragment"
+        android:name="com.example.plantcruiser.ui.myPlants.AddMyPlantItemFragment"
+        android:label="add_my_plant_item_fragment"
+        tools:layout="@layout/add_my_plant_item_fragment" >
+        <action
+            android:id="@+id/action_addMyPlantItemFragment_to_myPlantsFragment"
+            app:destination="@id/myPlantsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editMyPlantItemFragment"
+        android:name="com.example.plantcruiser.ui.myPlants.EditMyPlantItemFragment"
+        android:label="edit_my_plant_item_fragment"
+        tools:layout="@layout/edit_my_plant_item_fragment" >
+        <action
+            android:id="@+id/action_editMyPlantItemFragment_to_myPlantsFragment"
+            app:destination="@id/myPlantsFragment" />
+    </fragment>
 </navigation>

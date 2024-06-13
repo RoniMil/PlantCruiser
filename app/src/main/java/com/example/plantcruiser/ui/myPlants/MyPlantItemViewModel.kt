@@ -4,9 +4,11 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.switchMap
+import androidx.lifecycle.viewModelScope
 import com.example.plantcruiser.data.models.MyPlant
 import com.example.plantcruiser.data.repository.Repository
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
@@ -25,4 +27,9 @@ class MyPlantItemViewModel @Inject constructor(
     fun setId(id: Int) {
         _id.value = id
     }
+
+    fun insert(plant: MyPlant) = viewModelScope.launch {
+        plantRepository.insertPlant(plant)
+    }
+
 }

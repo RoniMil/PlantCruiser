@@ -1,13 +1,16 @@
 package com.example.plantcruiser.data.models
 
+import android.graphics.Bitmap
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "myPlants")
 class MyPlant (
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     val id : Int,
-    val platingDate: String,
+    val name: String,
+    val image: ByteArray?,
+    val plantingDate: String,
     val sunlight: String,
     val watering : String,
     val fertilizingFreq: String,

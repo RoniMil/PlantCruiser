@@ -21,7 +21,7 @@ interface MyPlantDao {
     fun getMyPlant(id : Int) : LiveData<MyPlant>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertPlant(plant: MyPlant)
+    suspend fun insertPlant(plant: MyPlant)
 
     @Update
     fun updatePlant(plant: MyPlant)

@@ -38,7 +38,7 @@ class Repository @Inject constructor(
     fun getMyPlant(id: Int) = myPlantLocalDataSource.getMyPlant(id)
     fun getAllMyPlants() = myPlantLocalDataSource.getAllMyPlants()
 
-    fun insertPlant(plant: MyPlant) = myPlantLocalDataSource.insertPlant(plant)
+    suspend fun insertPlant(plant: MyPlant) = myPlantLocalDataSource.insertPlant(plant)
 
     fun updatePlant(plant: MyPlant) = myPlantLocalDataSource.updatePlant(plant)
 
