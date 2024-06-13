@@ -1,8 +1,8 @@
-package com.example.plantcruiser.ui
+package com.example.plantcruiser.ui.myPlants
 
 import androidx.fragment.app.Fragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class AddItemFragment : Fragment(){
+class AddMyPlantItemFragment : Fragment(){
 }

@@ -11,6 +11,7 @@
     <string name="suggest_a_plant">הצע צמח</string>
     <string name="plant_finder">אתר צמח</string>
     <string name="edit">ערוך</string>
+    <string name="edit_plant">ערוך צמח</string>
     <string name="add_plant">הוסף צמח</string>
     <string name="remove_plant">הסר צמח</string>
     <string name="plant_description">תיאור</string>
@@ -40,7 +41,7 @@
     <string name="plant_sunlight">אור שמש:</string>
     <string name="plant_location">מיקום:</string>
     <string name="plant_season">עונה:</string>
-    <string name="plant_watering">השקיה:</string>
+    <string name="plant_watering">תדירות השקיה:</string>
     <string name="plant_name">שם הצמח</string>
     <string name="dialog_language_select">בחר שפה</string>
     <string name="dialog_accept">אישור</string>
@@ -62,4 +63,12 @@
     <string name="sun_part_shade">שמש חלקית</string>
     <string name="full_sun">שמש מלאה</string>
     <string name="herbaceous_perennial">רב שנתי עשבוני</string>
+    <string name="planting_date">תאריך שתילה:</string>
+    <string name="fertilizing_frequency">תדירות דישון:</string>
+    <string name="disease">מחלה:</string>
+    <string name="enter_date">בחר תאריך שתילה</string>
+    <string name="enter_sunlight_level">הזן עוצמת שמש</string>
+    <string name="enter_fertilizing_frequency">הזן תדירות דישון</string>
+    <string name="enter_watering_frequency">הזן תדירות השקיה</string>
+    <string name="enter_plant_disease">הזן מחלה</string>
 </resources>

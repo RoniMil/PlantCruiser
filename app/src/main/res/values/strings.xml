@@ -10,7 +10,7 @@
     <string name="my_plants">My plants</string>
     <string name="suggest_a_plant">Suggest a plant</string>
     <string name="plant_finder">Plant finder</string>
-    <string name="edit">Edit</string>
+    <string name="edit_plant">Edit plant</string>
     <string name="add_plant">Add plant</string>
     <string name="remove_plant">Remove plant</string>
     <string name="plant_description">Plant description</string>
@@ -40,7 +40,7 @@
     <string name="plant_sunlight">Sunlight:</string>
     <string name="plant_location">Location:</string>
     <string name="plant_season">Season:</string>
-    <string name="plant_watering">Watering:</string>
+    <string name="plant_watering">Watering frequency:</string>
     <string name="plant_name">PLANT NAME</string>
     <string name="dialog_language_select">Select language</string>
     <string name="dialog_accept">Accept</string>
@@ -62,4 +62,13 @@
     <string name="sun_part_shade">sun-part shade</string>
     <string name="full_sun">full sun</string>
     <string name="herbaceous_perennial">herbaceous perennial</string>
+    <string name="edit">edit</string>
+    <string name="planting_date">Planting date:</string>
+    <string name="fertilizing_frequency">Fertilizing frequency:</string>
+    <string name="disease">Disease:</string>
+    <string name="enter_date">Enter planting date</string>
+    <string name="enter_sunlight_level">Enter sunlight level</string>
+    <string name="enter_fertilizing_frequency">Enter fertilizing frequency</string>
+    <string name="enter_watering_frequency">Enter watering frequency</string>
+    <string name="enter_plant_disease">Enter plant disease</string>
 </resources>

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    tools:context=".ui.MyPlantsFragment">
+    tools:context=".ui.myPlants.MyPlantsFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -26,21 +26,36 @@
             android:textSize="24sp"
             />
 
-        <Button
-            style="@style/CustomButton"
-            android:id="@+id/editPlantsButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/edit"
-            android:layout_marginTop="8dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                style="@style/CustomButton"
+                android:id="@+id/editButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/add_plant"
+                android:layout_marginEnd="8dp"/>
 
+            <Button
+                style="@style/CustomButton"
+                android:id="@+id/setReminderButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/edit_plant"
+                android:layout_marginStart="8dp"/>
+
+        </LinearLayout>
         <Button
             style="@style/CustomButton"
-            android:id="@+id/addPlantButton"
+            android:id="@+id/removeButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/add_plant"
-            android:layout_marginTop="8dp"/>
+            android:text="@string/remove_plant"
+            android:layout_marginTop="8dp"
+            android:layout_gravity="center"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerViewPlants"

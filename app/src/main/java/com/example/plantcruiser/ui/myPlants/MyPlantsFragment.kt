@@ -1,4 +1,4 @@
-package com.example.plantcruiser.ui
+package com.example.plantcruiser.ui.myPlants
 
 import androidx.fragment.app.Fragment
 

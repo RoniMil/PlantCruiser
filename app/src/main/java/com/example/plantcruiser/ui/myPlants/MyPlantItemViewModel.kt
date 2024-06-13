@@ -1,18 +1,16 @@
-package com.example.plantcruiser.ui.myPlantsList
+package com.example.plantcruiser.ui.myPlants
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.switchMap
 import com.example.plantcruiser.data.models.MyPlant
-import com.example.plantcruiser.data.models.Plant
 import com.example.plantcruiser.data.repository.Repository
-import com.example.plantcruiser.utils.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class DBPlantViewModel @Inject constructor(
+class MyPlantItemViewModel @Inject constructor(
     private val plantRepository: Repository
 ) : ViewModel() {
 

@@ -11,13 +11,19 @@
         tools:layout="@layout/main_menu_fragment" >
         <action
             android:id="@+id/action_mainMenuFragment_to_DBFragment"
-            app:destination="@id/DBMenuFragment" />
+            app:destination="@id/DBMenuFragment"
+            app:popUpTo="@id/mainMenuFragment"
+            app:popUpToInclusive="false" />
         <action
             android:id="@+id/action_mainMenuFragment_to_languageDialogFragment"
-            app:destination="@id/languageDialogFragment" />
+            app:destination="@id/languageDialogFragment"
+            app:popUpTo="@id/mainMenuFragment"
+            app:popUpToInclusive="false" />
         <action
             android:id="@+id/action_mainMenuFragment_to_myPlantsFragment"
-            app:destination="@id/myPlantsFragment" />
+            app:destination="@id/myPlantsFragment"
+            app:popUpTo="@id/mainMenuFragment"
+            app:popUpToInclusive="false" />
 
     </fragment>
     <fragment
@@ -26,15 +32,15 @@
         android:label="db_menu_fragment"
         tools:layout="@layout/db_menu_fragment" >
         <action
-            android:id="@+id/action_DBFragment_to_mainMenuFragment"
-            app:destination="@id/mainMenuFragment"
-            app:popUpTo="@id/my_nav" />
-        <action
             android:id="@+id/action_DBMenuFragment_to_DBPlantListFragment"
-            app:destination="@id/DBPlantListFragment" />
+            app:destination="@id/DBPlantListFragment"
+            app:popUpTo="@id/DBMenuFragment"
+            app:popUpToInclusive="false" />
         <action
             android:id="@+id/action_DBMenuFragment_to_DBDiseaseListFragment"
-            app:destination="@id/DBDiseaseListFragment" />
+            app:destination="@id/DBDiseaseListFragment"
+            app:popUpTo="@id/DBMenuFragment"
+            app:popUpToInclusive="false" />
 
     </fragment>
     <fragment
@@ -44,7 +50,9 @@
         tools:layout="@layout/db_plant_list_fragment" >
         <action
             android:id="@+id/action_DBPlantListFragment_to_DBPlantDetailFragment"
-            app:destination="@id/DBPlantDetailFragment" />
+            app:destination="@id/DBPlantDetailFragment"
+            app:popUpTo="@id/DBPlantListFragment"
+            app:popUpToInclusive="false" />
     </fragment>
     <dialog
         android:id="@+id/languageDialogFragment"
@@ -53,7 +61,7 @@
         tools:layout="@layout/language_change_dialog" />
     <fragment
         android:id="@+id/myPlantsFragment"
-        android:name="com.example.plantcruiser.ui.MyPlantsFragment"
+        android:name="com.example.plantcruiser.ui.myPlants.MyPlantsFragment"
         android:label="my_plants_fragment"
         tools:layout="@layout/my_plants_fragment" />
     <fragment
