@@ -35,6 +35,7 @@ class Repository @Inject constructor(
 
     fun getDisease(id : Int) = diseaseLocalDataSource.getDisease(id)
 
+    fun getMyPlant(id: Int) = myPlantLocalDataSource.getMyPlant(id)
     fun getAllMyPlants() = myPlantLocalDataSource.getAllMyPlants()
 
     fun insertPlant(plant: MyPlant) = myPlantLocalDataSource.insertPlant(plant)

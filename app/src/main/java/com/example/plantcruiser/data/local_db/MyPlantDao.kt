@@ -7,6 +7,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
+import com.example.plantcruiser.data.models.Disease
 import com.example.plantcruiser.data.models.MyPlant
 import com.example.plantcruiser.data.models.Plant
 
@@ -15,6 +16,9 @@ import com.example.plantcruiser.data.models.Plant
 interface MyPlantDao {
     @Query("SELECT * FROM myPlants")
     fun getAllMyPlants() : LiveData<List<MyPlant>>
+
+    @Query("SELECT * FROM myplants WHERE id = :id")
+    fun getMyPlant(id : Int) : LiveData<MyPlant>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertPlant(plant: MyPlant)
