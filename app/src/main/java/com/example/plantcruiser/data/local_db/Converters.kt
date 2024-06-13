@@ -28,7 +28,7 @@ class Converters {
     }
 
     @TypeConverter
-    fun toSunlightList(data: String?): List<String>? {
+    fun toStringList(data: String?): List<String>? {
         if (data == null) {
             return null
         }

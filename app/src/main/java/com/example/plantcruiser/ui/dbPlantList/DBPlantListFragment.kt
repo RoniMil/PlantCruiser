@@ -67,8 +67,7 @@ class DBPlantListFragment : Fragment(), PlantsAdapter.PlantItemListener {
         binding.recyclerViewPlants.layoutManager = GridLayoutManager(requireContext(), 3)
         binding.recyclerViewPlants.adapter = adapter
 
-        viewModel.plants.observe(viewLifecycleOwner) { resource ->
-            resource?.let {
+        viewModel.plants.observe(viewLifecycleOwner) {
                 when (it.status) {
                     is Loading -> {
                         binding.progressBar.visibility = View.VISIBLE
@@ -86,7 +85,6 @@ class DBPlantListFragment : Fragment(), PlantsAdapter.PlantItemListener {
                     }
 
                 }
-            }
         }
     }
 
