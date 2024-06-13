@@ -3,7 +3,7 @@ package com.example.plantcruiser.data.models
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "MyPlants")
+@Entity(tableName = "myPlants")
 class MyPlant (
     @PrimaryKey
     val id : Int,

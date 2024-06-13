@@ -64,7 +64,7 @@
 
 
         <TextView
-            android:id="@+id/planting_date"
+            android:id="@+id/plant_cycle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="60dp"
@@ -75,7 +75,7 @@
             app:layout_constraintTop_toBottomOf="@+id/plant_id" />
 
         <TextView
-            android:id="@+id/planting_date_text"
+            android:id="@+id/plant_cycle_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -93,7 +93,7 @@
             android:text="@string/plant_sunlight"
             tools:text="Sunlight"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/planting_date" />
+            app:layout_constraintTop_toBottomOf="@+id/plant_cycle" />
 
         <TextView
             android:id="@+id/plant_sunlight_text"
@@ -103,7 +103,7 @@
             android:layout_marginEnd="60dp"
             tools:text="TEXTVIEW"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/planting_date_text" />
+            app:layout_constraintTop_toBottomOf="@+id/plant_cycle_text" />
 
 
         <TextView

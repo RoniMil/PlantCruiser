@@ -63,5 +63,9 @@ object AppModule {
     @Singleton
     fun provideDiseaseDao(database: AppDatabase) = database.diseaseDao()
 
+    @Provides
+    @Singleton
+    fun provideMyPlantsDao(database: AppDatabase) = database.myPlantsDao()
+
 
 }

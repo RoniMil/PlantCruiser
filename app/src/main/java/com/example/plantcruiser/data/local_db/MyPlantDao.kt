@@ -17,7 +17,7 @@ interface MyPlantDao {
     @Query("SELECT * FROM myPlants")
     fun getAllMyPlants() : LiveData<List<MyPlant>>
 
-    @Query("SELECT * FROM myplants WHERE id = :id")
+    @Query("SELECT * FROM myPlants WHERE id = :id")
     fun getMyPlant(id : Int) : LiveData<MyPlant>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
