@@ -1,7 +1,9 @@
 package com.example.plantcruiser.data.repository
 
 import com.example.plantcruiser.data.local_db.DiseaseDao
+import com.example.plantcruiser.data.local_db.MyPlantDao
 import com.example.plantcruiser.data.local_db.PlantDao
+import com.example.plantcruiser.data.models.MyPlant
 import com.example.plantcruiser.data.remote_db.DiseaseRemoteDataSource
 import com.example.plantcruiser.data.remote_db.PlantRemoteDataSource
 import com.example.plantcruiser.utils.performFetchingAndSaving
@@ -14,9 +16,8 @@ class Repository @Inject constructor(
     private val plantRemoteDataSource : PlantRemoteDataSource,
     private val plantLocalDataSource : PlantDao,
     private val diseaseRemoteDataSource : DiseaseRemoteDataSource,
-    private val diseaseLocalDataSource : DiseaseDao
-
-
+    private val diseaseLocalDataSource : DiseaseDao,
+    private val myPlantLocalDataSource: MyPlantDao
 ){
     fun getPlants(page : Int) = performFetchingAndSaving(
         {plantLocalDataSource.getPlants()},
@@ -33,5 +34,13 @@ class Repository @Inject constructor(
     )
 
     fun getDisease(id : Int) = diseaseLocalDataSource.getDisease(id)
+
+    fun getAllMyPlants() = myPlantLocalDataSource.getAllMyPlants()
+
+    fun insertPlant(plant: MyPlant) = myPlantLocalDataSource.insertPlant(plant)
+
+    fun updatePlant(plant: MyPlant) = myPlantLocalDataSource.updatePlant(plant)
+
+    fun deletePlant(plant: MyPlant) = myPlantLocalDataSource.deletePlant(plant)
 
 }
