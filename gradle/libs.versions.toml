@@ -44,6 +44,7 @@ navigationFragmentKtxVersion = "2.3.5"
 navigationUiKtxVersion = "2.3.5"
 androidxRoomRuntime = "2.7.0-alpha03"
 androidxRoomKtx = "2.7.0-alpha03"
+easypermissions = "3.0.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -98,6 +99,7 @@ navigation-fragment-ktx = { group = "androidx.navigation", name = "navigation-fr
 navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigationUiKtxVersion" }
 androidx-room-room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "androidxRoomRuntime" }
 androidx-room-room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "androidxRoomKtx" }
+easypermissions = { group = "pub.devrel", name = "easypermissions", version.ref = "easypermissions" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
