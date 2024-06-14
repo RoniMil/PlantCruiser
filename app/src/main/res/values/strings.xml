@@ -71,4 +71,5 @@
     <string name="enter_fertilizing_frequency">Enter fertilizing frequency</string>
     <string name="enter_watering_frequency">Enter watering frequency</string>
     <string name="enter_plant_disease">Enter plant disease</string>
+    <string name="empty_plant_msg">Can\'t add empty plant</string>
 </resources>

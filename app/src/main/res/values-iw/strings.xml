@@ -71,4 +71,5 @@
     <string name="enter_fertilizing_frequency">הזן תדירות דישון</string>
     <string name="enter_watering_frequency">הזן תדירות השקיה</string>
     <string name="enter_plant_disease">הזן מחלה</string>
+    <string name="empty_plant_msg">לא ניתן להוסיף צמח ריק</string>
 </resources>
