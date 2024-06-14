@@ -72,4 +72,8 @@
     <string name="enter_watering_frequency">הזן תדירות השקיה</string>
     <string name="enter_plant_disease">הזן מחלה</string>
     <string name="empty_plant_msg">לא ניתן להוסיף צמח ריק</string>
+    <string name="no_camera_permissions_msg">לא ניתן לצלם ללא הרשאה</string>
+    <string name="no_gallery_permissions_msg">לא ניתן לגשת לגלריה ללא הרשאה</string>
+    <string name="take_picture">צלם תמונה</string>
+    <string name="choose_from_gallery">בחר מהגלריה</string>
 </resources>

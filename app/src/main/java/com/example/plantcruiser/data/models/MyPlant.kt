@@ -9,7 +9,7 @@ class MyPlant (
     @PrimaryKey(autoGenerate = true)
     val id : Int,
     val name: String,
-    val image: ByteArray?,
+    val image: Bitmap?,
     val plantingDate: String,
     val sunlight: String,
     val watering : String,

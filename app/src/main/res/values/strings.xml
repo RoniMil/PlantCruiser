@@ -72,4 +72,8 @@
     <string name="enter_watering_frequency">Enter watering frequency</string>
     <string name="enter_plant_disease">Enter plant disease</string>
     <string name="empty_plant_msg">Can\'t add empty plant</string>
+    <string name="no_camera_permissions_msg">Can\'t take picture without permission</string>
+    <string name="no_gallery_permissions_msg">Can\'t access gallery without permission</string>
+    <string name="take_picture">Take picture</string>
+    <string name="choose_from_gallery">Choose from gallery</string>
 </resources>

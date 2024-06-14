@@ -103,7 +103,9 @@
         tools:layout="@layout/add_my_plant_item_fragment" >
         <action
             android:id="@+id/action_addMyPlantItemFragment_to_myPlantsFragment"
-            app:destination="@id/myPlantsFragment" />
+            app:destination="@id/myPlantsFragment"
+            app:popUpTo="@id/myPlantsFragment"
+            app:popUpToInclusive="false" />
     </fragment>
     <fragment
         android:id="@+id/editMyPlantItemFragment"
@@ -112,6 +114,8 @@
         tools:layout="@layout/edit_my_plant_item_fragment" >
         <action
             android:id="@+id/action_editMyPlantItemFragment_to_myPlantsFragment"
-            app:destination="@id/myPlantsFragment" />
+            app:destination="@id/myPlantsFragment"
+            app:popUpTo="@id/myPlantsFragment"
+            app:popUpToInclusive="false" />
     </fragment>
 </navigation>
