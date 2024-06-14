@@ -21,7 +21,9 @@ import com.example.plantcruiser.utils.Error
 import com.example.plantcruiser.utils.Loading
 import com.example.plantcruiser.utils.Success
 import com.example.plantcruiser.utils.autoCleared
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MyPlantsFragment : Fragment() , MyPlantsAdapter.PlantItemListener {
     private val viewModel: MyPlantsViewModel by viewModels()
 
@@ -50,6 +52,13 @@ class MyPlantsFragment : Fragment() , MyPlantsAdapter.PlantItemListener {
         adapter = MyPlantsAdapter(this)
         binding.recyclerViewPlants.layoutManager = GridLayoutManager(requireContext(), 3)
         binding.recyclerViewPlants.adapter = adapter
+
+        viewModel.plants.observe(viewLifecycleOwner) {
+            adapter.setPlants(it)
+
+
+
+        }
 
     }
 
