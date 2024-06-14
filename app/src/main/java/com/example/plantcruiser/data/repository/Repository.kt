@@ -6,8 +6,8 @@ import com.example.plantcruiser.data.local_db.PlantDao
 import com.example.plantcruiser.data.models.MyPlant
 import com.example.plantcruiser.data.remote_db.DiseaseRemoteDataSource
 import com.example.plantcruiser.data.remote_db.PlantRemoteDataSource
-import com.example.plantcruiser.utils.performFetchingAndSaving
 import com.example.plantcruiser.utils.performFetching
+import com.example.plantcruiser.utils.performFetchingAndSaving
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -40,8 +40,8 @@ class Repository @Inject constructor(
 
     suspend fun insertPlant(plant: MyPlant) = myPlantLocalDataSource.insertPlant(plant)
 
-    fun updatePlant(plant: MyPlant) = myPlantLocalDataSource.updatePlant(plant)
+    suspend fun updatePlant(plant: MyPlant) = myPlantLocalDataSource.updatePlant(plant)
 
-    fun deletePlant(plant: MyPlant) = myPlantLocalDataSource.deletePlant(plant)
+    suspend fun deletePlant(plant: MyPlant) = myPlantLocalDataSource.deletePlant(plant)
 
 }

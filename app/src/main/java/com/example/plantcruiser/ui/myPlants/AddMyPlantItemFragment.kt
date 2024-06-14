@@ -19,7 +19,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.plantcruiser.R
 import com.example.plantcruiser.data.models.MyPlant
-import com.example.plantcruiser.databinding.AddMyPlantItemFragmentBinding
+import com.example.plantcruiser.databinding.AddEditMyPlantItemFragmentBinding
 import com.example.plantcruiser.utils.autoCleared
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -28,7 +28,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class AddMyPlantItemFragment : Fragment() {
     private val viewModel: MyPlantItemViewModel by viewModels()
 
-    private var binding: AddMyPlantItemFragmentBinding by autoCleared()
+    private var binding: AddEditMyPlantItemFragmentBinding by autoCleared()
 
     private var selectedImageBitmap: Bitmap? = null
 
@@ -93,7 +93,7 @@ class AddMyPlantItemFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = AddMyPlantItemFragmentBinding.inflate(inflater, container, false)
+        binding = AddEditMyPlantItemFragmentBinding.inflate(inflater, container, false)
 
         binding.selectImageButton.setOnClickListener {
             openImagePicker()
@@ -112,7 +112,7 @@ class AddMyPlantItemFragment : Fragment() {
                     fertilizingFreq = binding.plantFertilizingFrequencyText.text.toString(),
                     disease = binding.plantDiseaseText.text.toString()
                 )
-                viewModel.insert(newPlant)
+                viewModel.insertMyPlant(newPlant)
                 findNavController().navigate(R.id.action_addMyPlantItemFragment_to_myPlantsFragment)
             } else {
                 Toast.makeText(

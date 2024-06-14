@@ -7,9 +7,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
-import com.example.plantcruiser.data.models.Disease
 import com.example.plantcruiser.data.models.MyPlant
-import com.example.plantcruiser.data.models.Plant
 
 
 @Dao
@@ -24,8 +22,8 @@ interface MyPlantDao {
     suspend fun insertPlant(plant: MyPlant)
 
     @Update
-    fun updatePlant(plant: MyPlant)
+    suspend fun updatePlant(plant: MyPlant)
 
     @Delete
-    fun deletePlant(plant: MyPlant)
+    suspend fun deletePlant(plant: MyPlant)
 }

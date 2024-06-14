@@ -28,8 +28,18 @@ class MyPlantItemViewModel @Inject constructor(
         _id.value = id
     }
 
-    fun insert(plant: MyPlant) = viewModelScope.launch {
+    fun getMyPlant(id: Int) = plantRepository.getMyPlant(id)
+
+    fun insertMyPlant(plant: MyPlant) = viewModelScope.launch {
         plantRepository.insertPlant(plant)
+    }
+
+    fun updateMyPlant(plant: MyPlant) = viewModelScope.launch {
+        plantRepository.updatePlant(plant)
+    }
+
+    fun deleteMyPlant(plant: MyPlant) = viewModelScope.launch {
+        plantRepository.deletePlant(plant)
     }
 
 }

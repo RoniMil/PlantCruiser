@@ -9,7 +9,6 @@ import androidx.fragment.app.viewModels
 import com.bumptech.glide.Glide
 import com.example.plantcruiser.data.models.MyPlant
 import com.example.plantcruiser.databinding.MyPlantItemFragmentBinding
-import com.example.plantcruiser.databinding.MyPlantsFragmentBinding
 import com.example.plantcruiser.utils.autoCleared
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -27,9 +26,9 @@ class MyPlantItemFragment : Fragment() {
     ): View? {
         binding = MyPlantItemFragmentBinding.inflate(inflater, container, false)
 
-//        binding.editButton
-//
-//        binding.removeButton
+        binding.editButton
+
+        binding.removeButton
 
         return binding.root
     }
@@ -41,7 +40,12 @@ class MyPlantItemFragment : Fragment() {
         }
         arguments?.getInt("id")?.let {
             viewModel.setId(it)
+            val fragment = EditMyPlantItemFragment()
+            val bundle = Bundle()
+            bundle.putInt("id", it)
+            fragment.arguments = bundle
         }
+
 
     }
 
