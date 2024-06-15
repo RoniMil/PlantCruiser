@@ -76,4 +76,6 @@
     <string name="no_gallery_permissions_msg">Can\'t access gallery without permission</string>
     <string name="take_picture">Take picture</string>
     <string name="choose_from_gallery">Choose from gallery</string>
+    <string name="remove_plant_dialog_text">Are you sure you want to remove this plant?</string>
+    <string name="remove_plant_dialog">Remove this plant</string>
 </resources>

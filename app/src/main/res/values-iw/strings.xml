@@ -76,4 +76,6 @@
     <string name="no_gallery_permissions_msg">לא ניתן לגשת לגלריה ללא הרשאה</string>
     <string name="take_picture">צלם תמונה</string>
     <string name="choose_from_gallery">בחר מהגלריה</string>
+    <string name="remove_plant_dialog_text">האם ברצונך להסיר צמח זה?</string>
+    <string name="remove_plant_dialog">הסר צמח זה</string>
 </resources>

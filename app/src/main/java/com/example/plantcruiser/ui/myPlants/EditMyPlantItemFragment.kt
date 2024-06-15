@@ -105,6 +105,7 @@ class EditMyPlantItemFragment : Fragment() {
         }
 
         id = arguments?.getInt("id")
+        selectedImageBitmap = HelperFunctions.toBitmap(arguments?.getByteArray("image"))
 
         binding.apply {
             plantNameText.setText(arguments?.getString("name"))
@@ -113,7 +114,7 @@ class EditMyPlantItemFragment : Fragment() {
             plantFertilizingFrequencyText.setText(arguments?.getString("fertilizingFreq"))
             plantSunlightText.setText(arguments?.getString("sunlight"))
             plantWateringText.setText(arguments?.getString("watering"))
-            plantImage.setImageBitmap(HelperFunctions.toBitmap(arguments?.getByteArray("image")))
+            plantImage.setImageBitmap(selectedImageBitmap)
         }
 
         binding.finishButton.setOnClickListener {
