@@ -113,9 +113,9 @@ class EditMyPlantItemFragment : Fragment() {
 
         binding.finishButton.setOnClickListener {
             if (binding.plantNameText.text.toString().isNotEmpty()) {
-                when(plant) {
-                    binding.plantNameText.text.toString() != plant.name
-                }
+//                when(plant) {
+////                    binding.plantNameText.text.toString() != plant.name
+////                }
                 viewModel.updateMyPlant(plant)
                 findNavController().navigate(R.id.action_addMyPlantItemFragment_to_myPlantsFragment)
             } else {
