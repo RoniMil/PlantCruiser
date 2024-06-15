@@ -29,12 +29,33 @@ class MyPlantItemFragment : Fragment() {
     ): View? {
         binding = MyPlantItemFragmentBinding.inflate(inflater, container, false)
 
+//        binding.plantNameText.setText(plant?.name)
+//        binding.plantingDateText.setText(plant?.plantingDate)
+//        binding.plantDiseaseText.setText(plant?.disease)
+//        binding.plantFertilizingFrequencyText.setText(plant?.fertilizingFreq)
+//        binding.plantSunlightText.setText(plant?.sunlight)
+//        binding.plantWateringText.setText(plant?.watering)
+//        binding.plantImage.setImageBitmap(plant?.image)
+
         binding.editButton.setOnClickListener {
+            val plant = viewModel.plant.value
             arguments?.getInt("id")?.let {
                 findNavController().navigate(
                     R.id.action_myPlantItemFragment_to_editMyPlantItemFragment,
-                    bundleOf("id" to it)
+                    bundleOf(
+                        "id" to id,
+                        "name" to plant?.name,
+                        "plantingDate" to plant?.plantingDate,
+                        "disease" to plant?.disease,
+                        "fertilizingFreq" to plant?.fertilizingFreq,
+                        "sunlight" to plant?.sunlight,
+                        "watering" to plant?.watering,
+                        "image" to plant?.image
+                    )
                 )
+//                findNavController().navigate(
+//                    R.id.action_myPlantItemFragment_to_editMyPlantItemFragment
+//                )
             }
 
         }

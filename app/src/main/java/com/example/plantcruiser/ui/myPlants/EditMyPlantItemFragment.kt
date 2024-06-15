@@ -103,6 +103,16 @@ class EditMyPlantItemFragment : Fragment() {
             binding.plantImage.setImageBitmap(selectedImageBitmap)
         }
 
+        binding.apply {
+            plantNameText.setText(arguments?.getString("name"))
+            plantingDateText.setText(arguments?.getString("plantingDate"))
+            plantDiseaseText.setText(arguments?.getString("disease"))
+            plantFertilizingFrequencyText.setText(arguments?.getString("fertilizingFreq"))
+            plantSunlightText.setText(arguments?.getString("sunlight"))
+            plantWateringText.setText(arguments?.getString("watering"))
+//            plantImage.setImageBitmap(arguments?.getString("image"))
+        }
+
         binding.finishButton.setOnClickListener {
             if (plant != null && binding.plantNameText.text.toString().isNotEmpty()) {
 
@@ -121,21 +131,6 @@ class EditMyPlantItemFragment : Fragment() {
 
         }
         return binding.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        arguments?.getInt("id")?.let {
-            plant = viewModel.getMyPlant(it).value
-        }
-
-        binding.plantNameText.setText(plant?.name)
-        binding.plantingDateText.setText(plant?.plantingDate)
-        binding.plantDiseaseText.setText(plant?.disease)
-        binding.plantFertilizingFrequencyText.setText(plant?.fertilizingFreq)
-        binding.plantSunlightText.setText(plant?.sunlight)
-        binding.plantWateringText.setText(plant?.watering)
-        binding.plantImage.setImageBitmap(plant?.image)
     }
 
     private fun openImagePicker() {
