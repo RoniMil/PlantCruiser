@@ -111,7 +111,7 @@
         android:id="@+id/editMyPlantItemFragment"
         android:name="com.example.plantcruiser.ui.myPlants.EditMyPlantItemFragment"
         android:label="edit_my_plant_item_fragment"
-        tools:layout="@layout/edit_my_plant_item_fragment" >
+        tools:layout="@layout/add_edit_my_plant_item_fragment" >
         <action
             android:id="@+id/action_editMyPlantItemFragment_to_myPlantsFragment"
             app:destination="@id/myPlantsFragment"

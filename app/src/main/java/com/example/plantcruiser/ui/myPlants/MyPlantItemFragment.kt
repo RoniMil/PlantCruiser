@@ -4,11 +4,15 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
+import com.example.plantcruiser.R
 import com.example.plantcruiser.data.models.MyPlant
 import com.example.plantcruiser.databinding.MyPlantItemFragmentBinding
+import com.example.plantcruiser.utils.HelperFunctions
 import com.example.plantcruiser.utils.autoCleared
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -26,7 +30,25 @@ class MyPlantItemFragment : Fragment() {
     ): View? {
         binding = MyPlantItemFragmentBinding.inflate(inflater, container, false)
 
-        binding.editButton
+        binding.editButton.setOnClickListener {
+            val plant = viewModel.plant.value!!
+            arguments?.getInt("id")?.let {
+                findNavController().navigate(
+                    R.id.action_myPlantItemFragment_to_editMyPlantItemFragment,
+                    bundleOf(
+                        "id" to it,
+                        "name" to plant.name,
+                        "plantingDate" to plant.plantingDate,
+                        "disease" to plant.disease,
+                        "fertilizingFreq" to plant.fertilizingFreq,
+                        "sunlight" to plant.sunlight,
+                        "watering" to plant.watering,
+                        "image" to HelperFunctions.fromBitmap(plant.image)
+                    )
+                )
+            }
+
+        }
 
         binding.removeButton
 
@@ -40,10 +62,6 @@ class MyPlantItemFragment : Fragment() {
         }
         arguments?.getInt("id")?.let {
             viewModel.setId(it)
-            val fragment = EditMyPlantItemFragment()
-            val bundle = Bundle()
-            bundle.putInt("id", it)
-            fragment.arguments = bundle
         }
 
 

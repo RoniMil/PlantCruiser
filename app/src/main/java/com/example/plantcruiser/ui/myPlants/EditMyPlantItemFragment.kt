@@ -18,7 +18,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.plantcruiser.R
+import com.example.plantcruiser.data.models.MyPlant
 import com.example.plantcruiser.databinding.AddEditMyPlantItemFragmentBinding
+import com.example.plantcruiser.utils.HelperFunctions
 import com.example.plantcruiser.utils.autoCleared
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -31,7 +33,8 @@ class EditMyPlantItemFragment : Fragment() {
 
     private var selectedImageBitmap: Bitmap? = null
 
-    private val id = arguments?.getInt("id")
+    private var id : Int? = null
+
 
     private val cameraLauncher =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
@@ -95,29 +98,39 @@ class EditMyPlantItemFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = AddEditMyPlantItemFragmentBinding.inflate(inflater, container, false)
-        val plant = viewModel.getMyPlant(id!!).value!!
-
-        binding.plantNameText.setText(plant.name)
-        binding.plantingDateText.setText(plant.plantingDate)
-        binding.plantDiseaseText.setText(plant.disease)
-        binding.plantFertilizingFrequencyText.setText(plant.fertilizingFreq)
-        binding.plantSunlightText.setText(plant.sunlight)
-        binding.plantWateringText.setText(plant.watering)
-        binding.plantImage.setImageBitmap(plant.image)
-
 
         binding.selectImageButton.setOnClickListener {
             openImagePicker()
             binding.plantImage.setImageBitmap(selectedImageBitmap)
         }
 
+        id = arguments?.getInt("id")
+
+        binding.apply {
+            plantNameText.setText(arguments?.getString("name"))
+            plantingDateText.setText(arguments?.getString("plantingDate"))
+            plantDiseaseText.setText(arguments?.getString("disease"))
+            plantFertilizingFrequencyText.setText(arguments?.getString("fertilizingFreq"))
+            plantSunlightText.setText(arguments?.getString("sunlight"))
+            plantWateringText.setText(arguments?.getString("watering"))
+            plantImage.setImageBitmap(HelperFunctions.toBitmap(arguments?.getByteArray("image")))
+        }
+
         binding.finishButton.setOnClickListener {
             if (binding.plantNameText.text.toString().isNotEmpty()) {
-//                when(plant) {
-////                    binding.plantNameText.text.toString() != plant.name
-////                }
+                val plant = MyPlant(
+                    id!!,
+                    binding.plantNameText.text.toString(),
+                    selectedImageBitmap,
+                    binding.plantingDateText.text.toString(),
+                    binding.plantSunlightText.text.toString(),
+                    binding.plantWateringText.text.toString(),
+                    binding.plantFertilizingFrequencyText.text.toString(),
+                    binding.plantDiseaseText.text.toString()
+                )
+
                 viewModel.updateMyPlant(plant)
-                findNavController().navigate(R.id.action_addMyPlantItemFragment_to_myPlantsFragment)
+                findNavController().navigate(R.id.action_editMyPlantItemFragment_to_myPlantsFragment)
             } else {
                 Toast.makeText(
                     requireContext(),
