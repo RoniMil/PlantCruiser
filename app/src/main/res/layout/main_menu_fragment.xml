@@ -58,14 +58,6 @@
 
     </Button>
 
-    <Button
-        android:id="@+id/plantFinderButton"
-        style="@style/CustomButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/plant_finder">
-
-    </Button>
 
 
 </LinearLayout>

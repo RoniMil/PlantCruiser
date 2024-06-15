@@ -23,11 +23,10 @@ class MainMenuFragment : Fragment() {
 
         binding.languageButton.setOnClickListener {
             findNavController().navigate(R.id.action_mainMenuFragment_to_languageDialogFragment)
-
         }
 
         binding.databaseButton.setOnClickListener{
-            findNavController().navigate(R.id.action_mainMenuFragment_to_DBFragment)
+            findNavController().navigate(R.id.action_mainMenuFragment_to_DBPlantListFragment)
         }
 
         binding.myPlantsButton.setOnClickListener {

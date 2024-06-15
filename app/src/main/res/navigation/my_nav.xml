@@ -10,11 +10,6 @@
         android:label="main_menu_fragment"
         tools:layout="@layout/main_menu_fragment" >
         <action
-            android:id="@+id/action_mainMenuFragment_to_DBFragment"
-            app:destination="@id/DBMenuFragment"
-            app:popUpTo="@id/mainMenuFragment"
-            app:popUpToInclusive="false" />
-        <action
             android:id="@+id/action_mainMenuFragment_to_languageDialogFragment"
             app:destination="@id/languageDialogFragment"
             app:popUpTo="@id/mainMenuFragment"
@@ -24,23 +19,9 @@
             app:destination="@id/myPlantsFragment"
             app:popUpTo="@id/mainMenuFragment"
             app:popUpToInclusive="false" />
-
-    </fragment>
-    <fragment
-        android:id="@+id/DBMenuFragment"
-        android:name="com.example.plantcruiser.ui.DBMenuFragment"
-        android:label="db_menu_fragment"
-        tools:layout="@layout/db_menu_fragment" >
         <action
-            android:id="@+id/action_DBMenuFragment_to_DBPlantListFragment"
-            app:destination="@id/DBPlantListFragment"
-            app:popUpTo="@id/DBMenuFragment"
-            app:popUpToInclusive="false" />
-        <action
-            android:id="@+id/action_DBMenuFragment_to_DBDiseaseListFragment"
-            app:destination="@id/DBDiseaseListFragment"
-            app:popUpTo="@id/DBMenuFragment"
-            app:popUpToInclusive="false" />
+            android:id="@+id/action_mainMenuFragment_to_DBPlantListFragment"
+            app:destination="@id/DBPlantListFragment" />
 
     </fragment>
     <fragment
@@ -75,11 +56,6 @@
             app:popUpTo="@id/myPlantsFragment"
             app:popUpToInclusive="false" />
     </fragment>
-    <fragment
-        android:id="@+id/DBDiseaseListFragment"
-        android:name="com.example.plantcruiser.ui.dbDiseaseList.DBDiseaseListFragment"
-        android:label="db_disease_list_fragment"
-        tools:layout="@layout/db_disease_list_fragment" />
     <fragment
         android:id="@+id/DBPlantDetailFragment"
         android:name="com.example.plantcruiser.ui.dbPlantList.DBPlantDetailFragment"

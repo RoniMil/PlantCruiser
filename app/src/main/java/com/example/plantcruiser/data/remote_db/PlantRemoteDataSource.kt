@@ -9,5 +9,4 @@ class PlantRemoteDataSource @Inject constructor(
     private val plantService: PlantService) : BaseDataSource() {
 
     suspend fun getPlants(page : Int) = getResult { plantService.getPlants(Constants.API_KEY, page) }
-//    suspend fun getPlant(id : Int) = getResult { plantService.getPlant(id, Constants.API_KEY) }
 }
