@@ -71,9 +71,7 @@
             app:popUpToInclusive="false" />
         <action
             android:id="@+id/action_myPlantsFragment_to_addMyPlantItemFragment"
-            app:destination="@id/addMyPlantItemFragment"
-            app:popUpTo="@id/myPlantsFragment"
-            app:popUpToInclusive="false" />
+            app:destination="@id/addMyPlantItemFragment" />
     </fragment>
     <fragment
         android:id="@+id/DBDiseaseListFragment"
@@ -92,9 +90,7 @@
         tools:layout="@layout/my_plant_item_fragment" >
         <action
             android:id="@+id/action_myPlantItemFragment_to_editMyPlantItemFragment"
-            app:destination="@id/editMyPlantItemFragment"
-            app:popUpTo="@id/myPlantItemFragment"
-            app:popUpToInclusive="false" />
+            app:destination="@id/editMyPlantItemFragment" />
     </fragment>
     <fragment
         android:id="@+id/addMyPlantItemFragment"
@@ -111,11 +107,12 @@
         android:id="@+id/editMyPlantItemFragment"
         android:name="com.example.plantcruiser.ui.myPlants.EditMyPlantItemFragment"
         android:label="edit_my_plant_item_fragment"
-        tools:layout="@layout/edit_my_plant_item_fragment" >
+        tools:layout="@layout/add_edit_my_plant_item_fragment" >
         <action
-            android:id="@+id/action_editMyPlantItemFragment_to_myPlantsFragment"
-            app:destination="@id/myPlantsFragment"
-            app:popUpTo="@id/myPlantsFragment"
+            android:id="@+id/action_editMyPlantItemFragment_to_myPlantItemFragment"
+            app:destination="@id/myPlantItemFragment"
+            app:popUpTo="@id/myPlantItemFragment"
             app:popUpToInclusive="false" />
     </fragment>
+
 </navigation>

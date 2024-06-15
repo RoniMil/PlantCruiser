@@ -18,6 +18,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.plantcruiser.R
+import com.example.plantcruiser.data.models.MyPlant
 import com.example.plantcruiser.databinding.AddEditMyPlantItemFragmentBinding
 import com.example.plantcruiser.utils.autoCleared
 import dagger.hilt.android.AndroidEntryPoint
@@ -31,7 +32,8 @@ class EditMyPlantItemFragment : Fragment() {
 
     private var selectedImageBitmap: Bitmap? = null
 
-    private val id = arguments?.getInt("id")
+    var plant : MyPlant? = null
+
 
     private val cameraLauncher =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
@@ -95,16 +97,6 @@ class EditMyPlantItemFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = AddEditMyPlantItemFragmentBinding.inflate(inflater, container, false)
-        val plant = viewModel.getMyPlant(id!!).value!!
-
-        binding.plantNameText.setText(plant.name)
-        binding.plantingDateText.setText(plant.plantingDate)
-        binding.plantDiseaseText.setText(plant.disease)
-        binding.plantFertilizingFrequencyText.setText(plant.fertilizingFreq)
-        binding.plantSunlightText.setText(plant.sunlight)
-        binding.plantWateringText.setText(plant.watering)
-        binding.plantImage.setImageBitmap(plant.image)
-
 
         binding.selectImageButton.setOnClickListener {
             openImagePicker()
@@ -112,12 +104,12 @@ class EditMyPlantItemFragment : Fragment() {
         }
 
         binding.finishButton.setOnClickListener {
-            if (binding.plantNameText.text.toString().isNotEmpty()) {
-                when(plant) {
-                    binding.plantNameText.text.toString() != plant.name
-                }
-                viewModel.updateMyPlant(plant)
-                findNavController().navigate(R.id.action_addMyPlantItemFragment_to_myPlantsFragment)
+            if (plant != null && binding.plantNameText.text.toString().isNotEmpty()) {
+
+//                when(plant) {
+//                    binding.plantNameText.text.toString() != plant.name
+              viewModel.updateMyPlant(plant!!)
+              findNavController().navigate(R.id.action_editMyPlantItemFragment_to_myPlantItemFragment)
             } else {
                 Toast.makeText(
                     requireContext(),
@@ -131,6 +123,20 @@ class EditMyPlantItemFragment : Fragment() {
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        arguments?.getInt("id")?.let {
+            plant = viewModel.getMyPlant(it).value
+        }
+
+        binding.plantNameText.setText(plant?.name)
+        binding.plantingDateText.setText(plant?.plantingDate)
+        binding.plantDiseaseText.setText(plant?.disease)
+        binding.plantFertilizingFrequencyText.setText(plant?.fertilizingFreq)
+        binding.plantSunlightText.setText(plant?.sunlight)
+        binding.plantWateringText.setText(plant?.watering)
+        binding.plantImage.setImageBitmap(plant?.image)
+    }
 
     private fun openImagePicker() {
         val options = arrayOf<CharSequence>(
