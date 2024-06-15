@@ -33,6 +33,10 @@ class MainMenuFragment : Fragment() {
             findNavController().navigate(R.id.action_mainMenuFragment_to_myPlantsFragment)
         }
 
+        binding.suggestAPlantButton.setOnClickListener {
+            findNavController().navigate(R.id.action_mainMenuFragment_to_suggestAPlantMenuFragment)
+        }
+
 
         return binding.root
     }

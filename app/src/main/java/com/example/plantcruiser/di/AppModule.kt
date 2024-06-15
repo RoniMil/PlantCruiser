@@ -5,6 +5,8 @@ import androidx.lifecycle.MutableLiveData
 import com.example.plantcruiser.data.local_db.AppDatabase
 import com.example.plantcruiser.data.remote_db.PlantService
 import com.example.plantcruiser.utils.Constants
+import com.google.android.gms.location.FusedLocationProviderClient
+import com.google.android.gms.location.LocationServices
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import dagger.Module
@@ -53,6 +55,14 @@ object AppModule {
     @Provides
     @Singleton
     fun provideMyPlantsDao(database: AppDatabase) = database.myPlantsDao()
+
+    @Singleton
+    @Provides
+    fun provideFusedLocationProviderClient(
+        @ApplicationContext context: Context
+    ): FusedLocationProviderClient {
+        return LocationServices.getFusedLocationProviderClient(context)
+    }
 
 
 }

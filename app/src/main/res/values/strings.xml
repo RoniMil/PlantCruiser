@@ -47,10 +47,10 @@
     <string name="average">average</string>
     <string name="minimum">minimum</string>
     <string name="none">none</string>
-    <string name="full_shade">full shade</string>
-    <string name="part_shade">part shade</string>
-    <string name="sun_part_shade">sun-part shade</string>
-    <string name="full_sun">full sun</string>
+    <string name="full_shade">Full shade</string>
+    <string name="part_shade">Part shade</string>
+    <string name="sun_part_shade">Sun-part shade</string>
+    <string name="full_sun">Full sun</string>
     <string name="herbaceous_perennial">herbaceous perennial</string>
     <string name="edit">edit</string>
     <string name="planting_date">Planting date:</string>
@@ -68,4 +68,10 @@
     <string name="choose_from_gallery">Choose from gallery</string>
     <string name="remove_plant_dialog_text">Are you sure you want to remove this plant?</string>
     <string name="remove_plant_dialog">Remove this plant</string>
+    <string name="indoors">Indoors</string>
+    <string name="choose_parameters">Choose parameters</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="enter_temperature">Enter temperature in Celsius</string>
+    <string name="no_location_permission">Can\'t access location without permission</string>
 </resources>

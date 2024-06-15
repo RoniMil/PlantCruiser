@@ -68,4 +68,10 @@
     <string name="choose_from_gallery">בחר מהגלריה</string>
     <string name="remove_plant_dialog_text">האם ברצונך להסיר צמח זה?</string>
     <string name="remove_plant_dialog">הסר צמח זה</string>
+    <string name="indoors">צמח ביתי</string>
+    <string name="choose_parameters">בחר פרמטרים</string>
+    <string name="yes">כן</string>
+    <string name="no">לא</string>
+    <string name="enter_temperature">הזן טמפרטורה במעלות צלזיוס</string>
+    <string name="no_location_permission">לא ניתן לגשת למיקום ללא הרשאה</string>
 </resources>
