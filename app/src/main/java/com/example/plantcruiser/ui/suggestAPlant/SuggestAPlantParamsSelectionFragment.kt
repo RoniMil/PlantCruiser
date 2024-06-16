@@ -226,19 +226,20 @@ class SuggestAPlantParamsSelectionFragment : Fragment(), SensorEventListener {
 
     private fun getHardinessZone(tempCelsius: Float?): String {
         tempCelsius?.let {
+            val normalizedTemp = it - 40
             return when {
-                tempCelsius <= -45.6 -> "1-1"
-                tempCelsius <= -40.0 -> "2-2"
-                tempCelsius <= -34.4 -> "3-3"
-                tempCelsius <= -28.9 -> "4-4"
-                tempCelsius <= -23.3 -> "5-5"
-                tempCelsius <= -17.8 -> "6-6"
-                tempCelsius <= -12.2 -> "7-7"
-                tempCelsius <= -6.7 -> "8-8"
-                tempCelsius <= -1.1 -> "9-9"
-                tempCelsius <= 4.4 -> "10-10"
-                tempCelsius <= 10.0 -> "11-11"
-                tempCelsius <= 15.6 -> "12-12"
+                normalizedTemp <= -45.6 -> "1-9"
+                normalizedTemp <= -40.0 -> "2-9"
+                normalizedTemp <= -34.4 -> "3-9"
+                normalizedTemp <= -28.9 -> "4-9"
+                normalizedTemp <= -23.3 -> "5-9"
+                normalizedTemp <= -17.8 -> "6-9"
+                normalizedTemp <= -12.2 -> "7-9"
+                normalizedTemp <= -6.7 -> "8-9"
+                normalizedTemp <= -1.1 -> "9-9"
+                normalizedTemp <= 4.4 -> "10-13"
+                normalizedTemp <= 10.0 -> "11-13"
+                normalizedTemp <= 15.6 -> "12-13"
                 else -> "13-13"
             }
 
