@@ -82,7 +82,7 @@ class AddMyPlantItemFragment : Fragment() {
             else
                 Toast.makeText(
                     requireContext(),
-                    getString(R.string.no_camera_permissions_msg),
+                    getString(R.string.no_gallery_permissions_msg),
                     Toast.LENGTH_SHORT
                 ).show()
         }
