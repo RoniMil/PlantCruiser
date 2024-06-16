@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
     tools:context=".ui.dbPlantList.DBPlantDetailFragment">
 
     <ProgressBar
@@ -33,12 +34,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            tools:text="TEXTVIEW"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/plant_image" />
+            app:layout_constraintTop_toBottomOf="@id/plant_image"
+            tools:text="TEXTVIEW" />
 
         <TextView
             android:id="@+id/plant_id"
@@ -47,9 +48,9 @@
             android:layout_marginStart="60dp"
             android:layout_marginTop="10dp"
             android:text="@string/plant_id"
-            tools:text="ID"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/plant_name" />
+            app:layout_constraintTop_toBottomOf="@+id/plant_name"
+            tools:text="ID" />
 
         <TextView
             android:id="@+id/plant_id_text"
@@ -57,10 +58,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="60dp"
-            tools:text="TEXTVIEW"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/plant_name" />
-
+            app:layout_constraintTop_toBottomOf="@+id/plant_name"
+            tools:text="TEXTVIEW" />
 
 
         <TextView
@@ -70,9 +70,9 @@
             android:layout_marginStart="60dp"
             android:layout_marginTop="10dp"
             android:text="@string/plant_cycle"
-            tools:text="Cycle"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/plant_id" />
+            app:layout_constraintTop_toBottomOf="@+id/plant_id"
+            tools:text="Cycle" />
 
         <TextView
             android:id="@+id/plant_cycle_text"
@@ -80,9 +80,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="60dp"
-            tools:text="TEXTVIEW"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/plant_id_text" />
+            app:layout_constraintTop_toBottomOf="@+id/plant_id_text"
+            tools:text="TEXTVIEW" />
 
         <TextView
             android:id="@+id/plant_sunlight"
@@ -91,9 +91,9 @@
             android:layout_marginStart="60dp"
             android:layout_marginTop="10dp"
             android:text="@string/plant_sunlight"
-            tools:text="Sunlight"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/plant_cycle" />
+            app:layout_constraintTop_toBottomOf="@+id/plant_cycle"
+            tools:text="Sunlight" />
 
         <TextView
             android:id="@+id/plant_sunlight_text"
@@ -101,9 +101,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="60dp"
-            tools:text="TEXTVIEW"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/plant_cycle_text" />
+            app:layout_constraintTop_toBottomOf="@+id/plant_cycle_text"
+            tools:text="TEXTVIEW" />
 
 
         <TextView
@@ -113,9 +113,9 @@
             android:layout_marginStart="60dp"
             android:layout_marginTop="10dp"
             android:text="@string/plant_watering"
-            tools:text="Watering"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/plant_sunlight" />
+            app:layout_constraintTop_toBottomOf="@+id/plant_sunlight"
+            tools:text="Watering" />
 
         <TextView
             android:id="@+id/plant_watering_text"
@@ -123,9 +123,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="60dp"
-            tools:text="TEXTVIEW"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/plant_sunlight_text" />
+            app:layout_constraintTop_toBottomOf="@+id/plant_sunlight_text"
+            tools:text="TEXTVIEW" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
