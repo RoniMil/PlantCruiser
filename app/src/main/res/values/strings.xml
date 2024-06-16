@@ -77,4 +77,5 @@
     <string name="no_light_sensor_msg">Couldn\'t use light sensor</string>
     <string name="no_ambient_temp_sensor_msg">Couldn\'t use ambient temperature sensor</string>
     <string name="suggested">Suggested</string>
+    <string name="no_suggested_plants_msg">Couldn\'t find plants for paramaters</string>
 </resources>

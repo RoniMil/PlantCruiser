@@ -112,11 +112,10 @@ class SuggestAPlantParamsSelectionFragment : Fragment(), SensorEventListener {
 
         binding.finishButton.setOnClickListener {
             val indoor = binding.indoorsSwitch.isChecked.toString()
-            println("THIS IS SHIMI: ${binding.sunConditionsGroup.checkedRadioButtonId}")
             val sunlight = setSunlight()
             val hardiness =
                 getHardinessZone(binding.temperatureText.text.toString().toFloatOrNull())
-            println("THIS IS DALIT: $hardiness")
+
             findNavController().navigate(
                 R.id.action_suggestAPlantParamsSelectionFragment_to_suggestAPlantListFragment,
                 bundleOf("indoor" to indoor, "hardiness" to hardiness, "sunlight" to sunlight)
@@ -225,7 +224,7 @@ class SuggestAPlantParamsSelectionFragment : Fragment(), SensorEventListener {
         }
     }
 
-    private fun getHardinessZone(tempCelsius: Float?): String? {
+    private fun getHardinessZone(tempCelsius: Float?): String {
         tempCelsius?.let {
             return when {
                 tempCelsius <= -45.6 -> "1-1"
@@ -244,17 +243,17 @@ class SuggestAPlantParamsSelectionFragment : Fragment(), SensorEventListener {
             }
 
         } ?: run {
-            return null
+            return ""
         }
 
     }
 
-    private fun setSunlight(): String? {
+    private fun setSunlight(): String {
         if (binding.fullShade.isChecked) return "full_shade"
         if (binding.partShade.isChecked) return "part_shade"
         if (binding.sunPartShade.isChecked) return "sun-part_shade"
         if (binding.fullSun.isChecked) return "full_sun"
-        return null
+        return ""
     }
 
 

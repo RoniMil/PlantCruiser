@@ -49,7 +49,7 @@ class SuggestAPlantListFragment : Fragment(), SuggestedPlantsAdapter.PlantItemLi
         binding.recyclerViewPlants.layoutManager = GridLayoutManager(requireContext(), 3)
         binding.recyclerViewPlants.adapter = adapter
 
-        viewModel.plants.observe(viewLifecycleOwner) {
+        viewModel.plants.observe(viewLifecycleOwner) { it ->
             when (it.status) {
                 is Loading -> {
                     binding.progressBar.visibility = View.VISIBLE
@@ -57,12 +57,19 @@ class SuggestAPlantListFragment : Fragment(), SuggestedPlantsAdapter.PlantItemLi
 
                 is Success -> {
                     binding.progressBar.visibility = View.GONE
-                    adapter.setPlants(it.status.data ?: emptyList())
+                    it.status.data?.let {
+                        adapter.setPlants(it)
+                    } ?:run {
+                        adapter.setPlants(emptyList())
+                        Toast.makeText(requireContext(), getString(R.string.no_suggested_plants_msg), Toast.LENGTH_LONG)
+                            .show()
+                        
+                    }
                 }
 
                 is Error -> {
                     binding.progressBar.visibility = View.GONE
-                    Toast.makeText(requireContext(), it.status.message, Toast.LENGTH_LONG)
+                    Toast.makeText(requireContext(), getString(R.string.no_suggested_plants_msg), Toast.LENGTH_LONG)
                         .show()
                 }
 
