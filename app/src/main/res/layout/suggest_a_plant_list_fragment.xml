@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- layout for the plant tracker -->
+<?xml version="1.0" encoding="utf-8"?><!-- layout for the plant tracker -->
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,19 +9,16 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp"
         android:gravity="center"
-        >
-
+        android:orientation="vertical"
+        android:padding="16dp">
 
         <TextView
             android:id="@+id/plantDBLabel"
-            android:textAllCaps="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="8dp"
-            android:text="@string/plants_db"
+            android:text="@string/suggested"
             android:textColor="@android:color/darker_gray"
             android:textSize="24sp"
             />
@@ -31,7 +27,7 @@
             android:id="@+id/recyclerViewPlants"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"/>
+            android:layout_marginTop="16dp" />
 
         <ProgressBar
             android:id="@+id/progress_bar"
@@ -39,7 +35,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:indeterminate="true"
-            android:visibility="gone"/>
+            android:visibility="gone" />
 
 
     </LinearLayout>

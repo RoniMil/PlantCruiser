@@ -6,7 +6,11 @@ import javax.inject.Singleton
 
 @Singleton
 class PlantRemoteDataSource @Inject constructor(
-    private val plantService: PlantService) : BaseDataSource() {
+    private val plantService: PlantService
+) : BaseDataSource() {
 
-    suspend fun getPlants(page : Int) = getResult { plantService.getPlants(Constants.API_KEY, page) }
+    suspend fun getPlants(page: Int) = getResult { plantService.getPlants(Constants.API_KEY, page) }
+
+    suspend fun getSuggestedPlants(options: Map<String, String?>) =
+        getResult { plantService.getSuggestedPlants(Constants.API_KEY, options) }
 }

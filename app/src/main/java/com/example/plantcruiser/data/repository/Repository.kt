@@ -2,6 +2,7 @@ package com.example.plantcruiser.data.repository
 
 import com.example.plantcruiser.data.local_db.MyPlantDao
 import com.example.plantcruiser.data.local_db.PlantDao
+import com.example.plantcruiser.data.local_db.SuggestedPlantsDao
 import com.example.plantcruiser.data.models.MyPlant
 import com.example.plantcruiser.data.remote_db.PlantRemoteDataSource
 import com.example.plantcruiser.utils.performFetching
@@ -11,17 +12,26 @@ import javax.inject.Singleton
 
 @Singleton
 class Repository @Inject constructor(
-    private val plantRemoteDataSource : PlantRemoteDataSource,
-    private val plantLocalDataSource : PlantDao,
-    private val myPlantLocalDataSource: MyPlantDao
-){
-    fun getPlants(page : Int) = performFetchingAndSaving(
-        {plantLocalDataSource.getPlants()},
-        {plantRemoteDataSource.getPlants(page)},
-        {plantLocalDataSource.insertPlants(it.data)}
+    private val plantRemoteDataSource: PlantRemoteDataSource,
+    private val plantLocalDataSource: PlantDao,
+    private val myPlantLocalDataSource: MyPlantDao,
+    private val suggestedPlantLocalDataSource: SuggestedPlantsDao
+) {
+    fun getPlants(page: Int) = performFetchingAndSaving(
+        { plantLocalDataSource.getPlants() },
+        { plantRemoteDataSource.getPlants(page) },
+        { plantLocalDataSource.insertPlants(it.data) }
     )
 
-    fun getPlant(id : Int) = performFetching { plantLocalDataSource.getPlant(id) }
+    fun getSuggestedPlants(options: Map<String, String?>) = performFetchingAndSaving(
+        { suggestedPlantLocalDataSource.getPlants() },
+        { plantRemoteDataSource.getSuggestedPlants(options) },
+        { suggestedPlantLocalDataSource.insertPlants(it.data) }
+    )
+
+    fun getPlant(id: Int) = performFetching { plantLocalDataSource.getPlant(id) }
+
+    fun getSuggestedPlant(id: Int) = performFetching { suggestedPlantLocalDataSource.getPlant(id) }
 
     fun getMyPlant(id: Int) = myPlantLocalDataSource.getMyPlant(id)
     fun getAllMyPlants() = myPlantLocalDataSource.getAllMyPlants()
@@ -31,5 +41,6 @@ class Repository @Inject constructor(
     suspend fun updatePlant(plant: MyPlant) = myPlantLocalDataSource.updatePlant(plant)
 
     suspend fun deletePlant(plant: MyPlant) = myPlantLocalDataSource.deletePlant(plant)
+
 
 }

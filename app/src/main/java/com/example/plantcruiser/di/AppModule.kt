@@ -56,6 +56,10 @@ object AppModule {
     @Singleton
     fun provideMyPlantsDao(database: AppDatabase) = database.myPlantsDao()
 
+    @Provides
+    @Singleton
+    fun provideSuggestedPlantsDao(database: AppDatabase) = database.suggestedPlantsDao()
+
     @Singleton
     @Provides
     fun provideFusedLocationProviderClient(

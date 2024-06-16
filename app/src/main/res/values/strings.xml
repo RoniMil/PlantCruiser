@@ -6,7 +6,7 @@
     <string name="select_image">Select image</string>
     <string name="finish">Finish</string>
     <string name="database">Database</string>
-    <string name="my_plants">My plants</string>
+    <string name="my_plants">My Plants</string>
     <string name="suggest_a_plant">Suggest a plant</string>
     <string name="edit_plant">Edit plant</string>
     <string name="add_plant">Add plant</string>
@@ -68,12 +68,13 @@
     <string name="choose_from_gallery">Choose from gallery</string>
     <string name="remove_plant_dialog_text">Are you sure you want to remove this plant?</string>
     <string name="remove_plant_dialog">Remove this plant</string>
-    <string name="indoors">Indoors</string>
-    <string name="choose_parameters">Choose parameters</string>
+    <string name="indoor">Indoor</string>
+    <string name="choose_parameters">Choose Parameters</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="enter_temperature">Enter temperature in Celsius</string>
     <string name="no_location_permission">Can\'t access location without permission</string>
     <string name="no_light_sensor_msg">Couldn\'t use light sensor</string>
     <string name="no_ambient_temp_sensor_msg">Couldn\'t use ambient temperature sensor</string>
+    <string name="suggested">Suggested</string>
 </resources>

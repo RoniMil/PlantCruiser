@@ -16,8 +16,10 @@ import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.example.plantcruiser.R
 import com.example.plantcruiser.databinding.SuggestAPlantParamsSelectionFragmentBinding
 import com.example.plantcruiser.utils.autoCleared
@@ -109,7 +111,16 @@ class SuggestAPlantParamsSelectionFragment : Fragment(), SensorEventListener {
 
 
         binding.finishButton.setOnClickListener {
-
+            val indoor = binding.indoorsSwitch.isChecked.toString()
+            println("THIS IS SHIMI: ${binding.sunConditionsGroup.checkedRadioButtonId}")
+            val sunlight = setSunlight()
+            val hardiness =
+                getHardinessZone(binding.temperatureText.text.toString().toFloatOrNull())
+            println("THIS IS DALIT: $hardiness")
+            findNavController().navigate(
+                R.id.action_suggestAPlantParamsSelectionFragment_to_suggestAPlantListFragment,
+                bundleOf("indoor" to indoor, "hardiness" to hardiness, "sunlight" to sunlight)
+            )
         }
 
 
@@ -213,7 +224,44 @@ class SuggestAPlantParamsSelectionFragment : Fragment(), SensorEventListener {
             }
         }
     }
+
+    private fun getHardinessZone(tempCelsius: Float?): String? {
+        tempCelsius?.let {
+            return when {
+                tempCelsius <= -45.6 -> "1-1"
+                tempCelsius <= -40.0 -> "2-2"
+                tempCelsius <= -34.4 -> "3-3"
+                tempCelsius <= -28.9 -> "4-4"
+                tempCelsius <= -23.3 -> "5-5"
+                tempCelsius <= -17.8 -> "6-6"
+                tempCelsius <= -12.2 -> "7-7"
+                tempCelsius <= -6.7 -> "8-8"
+                tempCelsius <= -1.1 -> "9-9"
+                tempCelsius <= 4.4 -> "10-10"
+                tempCelsius <= 10.0 -> "11-11"
+                tempCelsius <= 15.6 -> "12-12"
+                else -> "13-13"
+            }
+
+        } ?: run {
+            return null
+        }
+
+    }
+
+    private fun setSunlight(): String? {
+        if (binding.fullShade.isChecked) return "full_shade"
+        if (binding.partShade.isChecked) return "part_shade"
+        if (binding.sunPartShade.isChecked) return "sun-part_shade"
+        if (binding.fullSun.isChecked) return "full_sun"
+        return null
+    }
+
+
 }
+
+
+
 
 
 
