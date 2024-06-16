@@ -42,5 +42,7 @@ class Repository @Inject constructor(
 
     suspend fun deletePlant(plant: MyPlant) = myPlantLocalDataSource.deletePlant(plant)
 
+    suspend fun deleteAllSuggestions() = suggestedPlantLocalDataSource.deleteAll()
+
 
 }

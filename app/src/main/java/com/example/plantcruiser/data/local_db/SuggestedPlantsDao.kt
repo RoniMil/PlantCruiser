@@ -21,4 +21,8 @@ interface SuggestedPlantsDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertPlants(plants : List<SuggestedPlant>)
+
+    @Query("DELETE FROM suggestedPlants")
+    suspend fun deleteAll()
+
 }

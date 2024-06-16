@@ -34,7 +34,10 @@ class SuggestAPlantListFragment : Fragment(), SuggestedPlantsAdapter.PlantItemLi
     ): View? {
         binding = SuggestAPlantListFragmentBinding.inflate(inflater, container, false)
 
+        viewModel.deleteSuggestions()
+
         return binding.root
+
 
 
     }
