@@ -45,6 +45,7 @@ navigationUiKtxVersion = "2.3.5"
 androidxRoomRuntime = "2.7.0-alpha03"
 androidxRoomKtx = "2.7.0-alpha03"
 playServicesLocation = "21.3.0"
+appcompat = "1.7.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -100,6 +101,7 @@ navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx",
 androidx-room-room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "androidxRoomRuntime" }
 androidx-room-room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "androidxRoomKtx" }
 play-services-location = { group = "com.google.android.gms", name = "play-services-location", version.ref = "playServicesLocation" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

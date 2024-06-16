@@ -23,8 +23,8 @@
             android:id="@+id/action_mainMenuFragment_to_DBPlantListFragment"
             app:destination="@id/DBPlantListFragment" />
         <action
-            android:id="@+id/action_mainMenuFragment_to_suggestAPlantMenuFragment"
-            app:destination="@id/suggestAPlantMenuFragment" />
+            android:id="@+id/action_mainMenuFragment_to_suggestAPlantParamsSelectionFragment"
+            app:destination="@id/suggestAPlantParamsSelectionFragment" />
 
     </fragment>
     <fragment
@@ -103,32 +103,15 @@
             app:popUpToInclusive="true" />
     </fragment>
     <fragment
-        android:id="@+id/suggestAPlantMenuFragment"
-        android:name="com.example.plantcruiser.ui.suggestAPlant.SuggestAPlantMenuFragment"
-        android:label="SuggestAPlantMenuFragment" >
-        <action
-            android:id="@+id/action_suggestAPlantMenuFragment_to_suggestAPlantManualSelectionFragment"
-            app:destination="@id/suggestAPlantManualSelectionFragment" />
-        <action
-            android:id="@+id/action_suggestAPlantMenuFragment_to_suggestAPlantListFragment"
-            app:destination="@id/suggestAPlantListFragment" />
-    </fragment>
-    <fragment
         android:id="@+id/suggestAPlantListFragment"
         android:name="com.example.plantcruiser.ui.suggestAPlant.SuggestAPlantListFragment"
-        android:label="SuggestAPlantListFragment" >
-        <action
-            android:id="@+id/action_suggestAPlantListFragment_to_suggestAPlantMenuFragment"
-            app:destination="@id/suggestAPlantMenuFragment"
-            app:popUpTo="@id/suggestAPlantMenuFragment"
-            app:popUpToInclusive="true" />
-    </fragment>
+        android:label="SuggestAPlantListFragment" />
     <fragment
-        android:id="@+id/suggestAPlantManualSelectionFragment"
-        android:name="com.example.plantcruiser.ui.suggestAPlant.SuggestAPlantManualSelectionFragment"
-        android:label="SuggestAPlantManualSelectionFragment" >
+        android:id="@+id/suggestAPlantParamsSelectionFragment"
+        android:name="com.example.plantcruiser.ui.suggestAPlant.SuggestAPlantParamsSelectionFragment"
+        android:label="SuggestAPlantParamsSelectionFragment" >
         <action
-            android:id="@+id/action_suggestAPlantManualSelectionFragment_to_suggestAPlantListFragment"
+            android:id="@+id/action_suggestAPlantParamsSelectionFragment_to_suggestAPlantListFragment"
             app:destination="@id/suggestAPlantListFragment" />
     </fragment>
 </navigation>

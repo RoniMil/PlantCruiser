@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginTop="16dp"
     android:orientation="vertical"
     android:padding="16dp"
-    android:layout_marginTop="16dp"
-    tools:context=".ui.suggestAPlant.SuggestAPlantManualSelectionFragment">
+    tools:context=".ui.suggestAPlant.SuggestAPlantParamsSelectionFragment">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="36dp"
         android:gravity="center"
-        android:textSize="24sp"
         android:text="@string/choose_parameters"
-        android:layout_marginBottom="36dp">
+        android:textSize="24sp">
 
     </TextView>
 
@@ -24,37 +24,31 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:orientation="vertical">
-        <TextView
-            android:textSize="18sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/indoors"
-            android:gravity="start"
-            android:layout_marginBottom="8dp"/>
 
-        <androidx.appcompat.widget.SwitchCompat
+        <Switch
             android:id="@+id/indoorsSwitch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:text="@string/indoors"
             android:textOff="@string/no"
             android:textOn="@string/yes"
-            android:layout_marginBottom="24dp" />
-
+            android:textSize="18sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/sun_conditions"
+            android:layout_marginBottom="8dp"
             android:gravity="start"
-            android:textSize="18sp"
-            android:layout_marginBottom="8dp"/>
+            android:text="@string/sun_conditions"
+            android:textSize="18sp" />
 
         <RadioGroup
             android:id="@+id/sunConditionsGroup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginBottom="16dp">
+            android:layout_marginBottom="16dp"
+            android:orientation="vertical">
 
             <RadioButton
                 android:id="@+id/fullShade"
@@ -82,14 +76,32 @@
         </RadioGroup>
 
         <EditText
+            android:id="@+id/temperatureText"
             style="@style/CustomEditText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
             android:hint="@string/enter_temperature" />
 
+        <Button
+            android:id="@+id/environmentSensorButton"
+            style="@style/CustomButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/environment_sensor">
+
+        </Button>
+
+        <Button
+            android:id="@+id/finishButton"
+            style="@style/CustomButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/finish"
+             />
+
     </LinearLayout>
-
-
 
 
 </LinearLayout>

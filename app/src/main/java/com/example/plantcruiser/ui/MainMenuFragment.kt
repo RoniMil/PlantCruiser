@@ -34,7 +34,7 @@ class MainMenuFragment : Fragment() {
         }
 
         binding.suggestAPlantButton.setOnClickListener {
-            findNavController().navigate(R.id.action_mainMenuFragment_to_suggestAPlantMenuFragment)
+            findNavController().navigate(R.id.action_mainMenuFragment_to_suggestAPlantParamsSelectionFragment)
         }
 
 

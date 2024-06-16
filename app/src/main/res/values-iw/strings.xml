@@ -74,4 +74,6 @@
     <string name="no">לא</string>
     <string name="enter_temperature">הזן טמפרטורה במעלות צלזיוס</string>
     <string name="no_location_permission">לא ניתן לגשת למיקום ללא הרשאה</string>
+    <string name="no_light_sensor_msg">לא התאפשר שימוש בחיישן אור</string>
+    <string name="no_ambient_temp_sensor_msg">לא התאפשר שימוש בחיישן טמפרטורה</string>
 </resources>

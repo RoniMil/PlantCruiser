@@ -1,70 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- layout for the homescreen -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<!-- layout for the plant tracker -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_horizontal"
-    android:orientation="vertical"
-    android:layout_marginTop="62dp"
     android:padding="16dp"
     tools:context=".ui.suggestAPlant.SuggestAPlantListFragment">
 
-    <Button
-        style="@style/CustomButton"
-        android:id="@+id/difficultyLevelButton"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/difficulty_level"
+        android:orientation="vertical"
         android:padding="16dp"
-        android:layout_marginBottom="16dp">
-
-    </Button>
-
-    <Button
-        style="@style/CustomButton"
-        android:id="@+id/seasonButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/season"
-        android:padding="16dp"
-        android:layout_marginBottom="16dp">
-
-    </Button>
-
-    <Button
-        style="@style/CustomButton"
-        android:id="@+id/locationButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/location"
-        android:padding="16dp"
-        android:layout_marginBottom="16dp">
-
-    </Button>
-
-    <Button
-        style="@style/CustomButton"
-        android:id="@+id/sunConditionsButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/sun_conditions"
-        android:padding="16dp"
-        android:layout_marginBottom="16dp">
-
-    </Button>
-
-    <Button
-        style="@style/CustomButton"
-        android:id="@+id/temperatureButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/temperature"
-        android:padding="16dp"
-        android:layout_marginBottom="16dp">
-
-    </Button>
+        android:gravity="center"
+        >
 
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/plantDBLabel"
+            android:textAllCaps="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="@string/plants_db"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="24sp"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewPlants"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"/>
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:indeterminate="true"
+            android:visibility="gone"/>
+
+
+    </LinearLayout>
+</ScrollView>

@@ -74,4 +74,6 @@
     <string name="no">No</string>
     <string name="enter_temperature">Enter temperature in Celsius</string>
     <string name="no_location_permission">Can\'t access location without permission</string>
+    <string name="no_light_sensor_msg">Couldn\'t use light sensor</string>
+    <string name="no_ambient_temp_sensor_msg">Couldn\'t use ambient temperature sensor</string>
 </resources>
