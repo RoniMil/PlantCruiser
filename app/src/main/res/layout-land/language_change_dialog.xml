@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?><!-- This xml defines the dialog for changing languages -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="start"
+    android:orientation="vertical"
+    tools:context=".ui.dialogs.LanguageChangeDialogFragment">
+
+    <RadioGroup
+        android:id="@+id/radioGroupLanguages"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="start"
+        android:padding="24dp"
+        tools:ignore="UselessParent">
+
+        <RadioButton
+            android:id="@+id/radioButtonEnglish"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="English"
+            android:textSize="22sp"
+            tools:ignore="HardcodedText" />
+
+        <RadioButton
+            android:id="@+id/radioButtonHebrew"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="עברית"
+            android:textSize="22sp"
+            tools:ignore="HardcodedText" />
+    </RadioGroup>
+</LinearLayout>
