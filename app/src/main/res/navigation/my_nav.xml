@@ -89,7 +89,7 @@
             android:id="@+id/action_addMyPlantItemFragment_to_myPlantsFragment"
             app:destination="@id/myPlantsFragment"
             app:popUpTo="@id/myPlantsFragment"
-            app:popUpToInclusive="false" />
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/editMyPlantItemFragment"
