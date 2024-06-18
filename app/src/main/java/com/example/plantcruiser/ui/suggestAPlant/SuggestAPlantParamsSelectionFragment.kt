@@ -137,12 +137,7 @@ class SuggestAPlantParamsSelectionFragment : Fragment(), SensorEventListener {
 
                 }
 
-                lightLevel > 100 && lightLevel <= 1000 -> {
-                    sunPartShade.isChecked = true
-                    indoorsSwitch.isChecked = false
-                }
-
-                lightLevel > 1000 -> {
+                else -> {
                     fullSun.isChecked = true
                     indoorsSwitch.isChecked = false
                 }
@@ -180,7 +175,6 @@ class SuggestAPlantParamsSelectionFragment : Fragment(), SensorEventListener {
     private fun setSunlight(): String {
         if (binding.fullShade.isChecked) return "full_shade"
         if (binding.partShade.isChecked) return "part_shade"
-        if (binding.sunPartShade.isChecked) return "sun-part_shade"
         if (binding.fullSun.isChecked) return "full_sun"
         return ""
     }

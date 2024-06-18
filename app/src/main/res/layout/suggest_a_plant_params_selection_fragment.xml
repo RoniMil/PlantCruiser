@@ -63,12 +63,6 @@
                 android:text="@string/part_shade" />
 
             <RadioButton
-                android:id="@+id/sunPartShade"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/sun_part_shade" />
-
-            <RadioButton
                 android:id="@+id/fullSun"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
