@@ -7,6 +7,7 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.example.plantcruiser.data.models.SuggestedPlant
 
+// Dao for the SuggestedPlant type, allow CRUD actions on DB
 @Dao
 interface SuggestedPlantsDao {
 

@@ -12,6 +12,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+// viewModel for the plant list in suggest a plant fragment
 @HiltViewModel
 class SuggestAPlantListViewModel @Inject constructor(val repository: Repository) : ViewModel() {
 
@@ -19,11 +20,13 @@ class SuggestAPlantListViewModel @Inject constructor(val repository: Repository)
 
 
     private val _plants = _options.switchMap {
+        // fetch plants from repository using the values in options as parameters for query
         repository.getSuggestedPlants(it)
     }
 
     val plants: LiveData<Resource<List<SuggestedPlant>>> get() = _plants
 
+    // set options variable
     fun setOptions(indoor: String?, sunlight: String?, hardiness: String?) {
         val map = mutableMapOf<String, String?>()
         map["indoor"] = indoor
@@ -32,6 +35,8 @@ class SuggestAPlantListViewModel @Inject constructor(val repository: Repository)
         _options.value = map
     }
 
+    // helper function for clearing the presented suggestions from DB after user leaves the screen
+    // this will effectively reset the shown suggestions for each query
     fun deleteSuggestions() = viewModelScope.launch { repository.deleteAllSuggestions() }
 
 

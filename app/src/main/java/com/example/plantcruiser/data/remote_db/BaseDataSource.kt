@@ -3,6 +3,7 @@ package com.example.plantcruiser.data.remote_db
 import com.example.plantcruiser.utils.Resource
 import retrofit2.Response
 
+// Class for handling network calls and managing their responses
 abstract class BaseDataSource {
 
     protected suspend fun <T> getResult(call: suspend () -> Response<T>): Resource<T> {

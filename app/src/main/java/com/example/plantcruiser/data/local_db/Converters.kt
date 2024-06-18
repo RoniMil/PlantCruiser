@@ -8,6 +8,7 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.io.ByteArrayOutputStream
 
+// Class for allowing Room to convert to and from certain types
 class Converters {
 
     private val gson = Gson()

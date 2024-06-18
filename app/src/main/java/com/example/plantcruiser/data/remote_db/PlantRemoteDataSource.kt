@@ -4,6 +4,7 @@ import com.example.plantcruiser.utils.Constants
 import javax.inject.Inject
 import javax.inject.Singleton
 
+// Class that serves as a remote data source for fetching plant data from the API.
 @Singleton
 class PlantRemoteDataSource @Inject constructor(
     private val plantService: PlantService

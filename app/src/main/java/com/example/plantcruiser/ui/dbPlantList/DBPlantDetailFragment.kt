@@ -5,20 +5,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.compose.ui.text.toLowerCase
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.bumptech.glide.Glide
 import com.example.plantcruiser.R
 import com.example.plantcruiser.data.models.Plant
 import com.example.plantcruiser.databinding.DbPlantDetailsFragmentBinding
-import dagger.hilt.android.AndroidEntryPoint
-import com.example.plantcruiser.utils.autoCleared
 import com.example.plantcruiser.utils.Error
 import com.example.plantcruiser.utils.Loading
 import com.example.plantcruiser.utils.Success
-import java.util.Locale
+import com.example.plantcruiser.utils.autoCleared
+import dagger.hilt.android.AndroidEntryPoint
 
+// Fragment for showing the plant's details on click of its card
 @AndroidEntryPoint
 class DBPlantDetailFragment : Fragment() {
     private val viewModel: DBPlantDetailViewModel by viewModels()
@@ -33,32 +32,38 @@ class DBPlantDetailFragment : Fragment() {
         return binding.root
     }
 
+    // observes the plant LiveData and updates UI based on its status
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel.plant.observe(viewLifecycleOwner) {
             when (it.status) {
                 is Success -> {
+                    // if successfully fetched data: update the plants details showing
                     binding.progressBar.visibility = View.GONE
                     updatePlant(it.status.data!!)
                     binding.plantCl.visibility = View.VISIBLE
                 }
 
                 is Loading -> {
+                    // show progress bar if loading
                     binding.progressBar.visibility = View.VISIBLE
                     binding.plantCl.visibility = View.GONE
                 }
 
                 is Error -> {
+                    // if something went wrong show a toast with the error
                     binding.progressBar.visibility = View.GONE
                     Toast.makeText(requireContext(), it.status.message, Toast.LENGTH_LONG).show()
                 }
             }
         }
+        // if exists, set viewModel's id with the id passed as argument from list fragment
         arguments?.getInt("id")?.let {
             viewModel.setId(it)
         }
     }
 
+    // Function for updating the details showing in the fragment with the plant information from DB
     private fun updatePlant(plant: Plant) {
         binding.plantName.text = plant.common_name
         binding.plantIdText.text = plant.id.toString()

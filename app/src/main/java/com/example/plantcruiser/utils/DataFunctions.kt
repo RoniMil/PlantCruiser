@@ -6,6 +6,7 @@ import androidx.lifecycle.liveData
 import androidx.lifecycle.map
 import kotlinx.coroutines.Dispatchers
 
+// functions for DB fetching and saving
 fun <T> performFetching(
     localDbFetch: () -> LiveData<T>
 ): LiveData<Resource<T>> = liveData(Dispatchers.IO) {

@@ -10,6 +10,7 @@ import com.example.plantcruiser.utils.performFetchingAndSaving
 import javax.inject.Inject
 import javax.inject.Singleton
 
+// DB repository that provides data access to the rest of the application
 @Singleton
 class Repository @Inject constructor(
     private val plantRemoteDataSource: PlantRemoteDataSource,

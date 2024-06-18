@@ -8,11 +8,13 @@ import com.bumptech.glide.Glide
 import com.example.plantcruiser.data.models.SuggestedPlant
 import com.example.plantcruiser.databinding.ItemPlantBinding
 
+// plant adapter for the suggested plant list recycler view
 class SuggestedPlantsAdapter(private val listener: PlantItemListener) :
     RecyclerView.Adapter<SuggestedPlantsAdapter.PlantViewHolder>() {
 
     private val plants = ArrayList<SuggestedPlant>()
 
+    // holder for suggested plant item Class
     class PlantViewHolder(
         private val itemBinding: ItemPlantBinding,
         private val listener: PlantItemListener
@@ -25,6 +27,7 @@ class SuggestedPlantsAdapter(private val listener: PlantItemListener) :
             itemBinding.root.setOnClickListener(this)
         }
 
+        // bind current plant to a cell in the recycler
         fun bind(item: SuggestedPlant) {
             this.plant = item
             itemBinding.plantName.text = item.common_name
@@ -40,6 +43,7 @@ class SuggestedPlantsAdapter(private val listener: PlantItemListener) :
 
     }
 
+    // sets the plants to show in the recycler
     fun setPlants(plants: Collection<SuggestedPlant>) {
         this.plants.clear()
         this.plants.addAll(plants)
@@ -58,6 +62,7 @@ class SuggestedPlantsAdapter(private val listener: PlantItemListener) :
     override fun getItemCount() = plants.size
 
 
+    // listener interface for clicking the plants from suggested plant list
     interface PlantItemListener {
         fun onPlantClick(plantId : Int)
     }

@@ -24,7 +24,7 @@ import com.example.plantcruiser.utils.HelperFunctions
 import com.example.plantcruiser.utils.autoCleared
 import dagger.hilt.android.AndroidEntryPoint
 
-
+// fragment for editing an existing plant from the my plants list
 @AndroidEntryPoint
 class EditMyPlantItemFragment : Fragment() {
     private val viewModel: MyPlantItemViewModel by viewModels()
@@ -33,18 +33,20 @@ class EditMyPlantItemFragment : Fragment() {
 
     private var selectedImageBitmap: Bitmap? = null
 
-    private var id : Int? = null
+    private var id: Int? = null
 
-
+    // launcher for opening camera
     private val cameraLauncher =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
             if (result.resultCode == RESULT_OK) {
                 val imageBitmap = result.data?.extras?.get("data") as Bitmap
+                // set the image to be uploaded to the item as the one taken with the camera
                 selectedImageBitmap = imageBitmap
                 binding.plantImage.setImageBitmap(imageBitmap)
             }
         }
 
+    // launcher for opening gallery
     private val galleryLauncher =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
             if (result.resultCode == RESULT_OK) {
@@ -55,6 +57,7 @@ class EditMyPlantItemFragment : Fragment() {
                             requireContext().contentResolver,
                             imageUri
                         )
+                    // set the image to be uploaded to the item as the one chosen in the gallery
                     selectedImageBitmap = imageBitmap
                     binding.plantImage.setImageBitmap(imageBitmap)
                 }
@@ -63,6 +66,7 @@ class EditMyPlantItemFragment : Fragment() {
 
         }
 
+    // launcher for requesting camera permissions
     private val cameraPermissionsLauncher: ActivityResultLauncher<String> =
         registerForActivityResult(
             ActivityResultContracts.RequestPermission()
@@ -77,6 +81,7 @@ class EditMyPlantItemFragment : Fragment() {
                 ).show()
         }
 
+    // launcher for requesting gallery permissions
     private val galleryPermissionsLauncher: ActivityResultLauncher<String> =
         registerForActivityResult(
             ActivityResultContracts.RequestPermission()
@@ -99,14 +104,18 @@ class EditMyPlantItemFragment : Fragment() {
     ): View? {
         binding = AddEditMyPlantItemFragmentBinding.inflate(inflater, container, false)
 
+        // listener for triggering the select image dialog from gallery or camera
         binding.selectImageButton.setOnClickListener {
             openImagePicker()
+            // preserves null as the image if no image was chosen
             binding.plantImage.setImageBitmap(selectedImageBitmap)
         }
 
+        // save the plant's id and image from before edit (passed as bundle from details fragment)
         id = arguments?.getInt("id")
         selectedImageBitmap = HelperFunctions.toBitmap(arguments?.getByteArray("image"))
 
+        // save the plant's details from before edit to be presented to the user when entering edit mode
         binding.apply {
             plantNameText.setText(arguments?.getString("name"))
             plantingDateText.setText(arguments?.getString("plantingDate"))
@@ -117,10 +126,12 @@ class EditMyPlantItemFragment : Fragment() {
             plantImage.setImageBitmap(selectedImageBitmap)
         }
 
+        // listener for editing the chosen plant in the myPlants DB
         binding.finishButton.setOnClickListener {
+            // ensure plant is not empty, else show the user a toast
             if (binding.plantNameText.text.toString().isNotEmpty()) {
                 val plant = MyPlant(
-                    id!!,
+                    id!!, // ensures the same plant object in the data base will be modified with the new data
                     binding.plantNameText.text.toString(),
                     selectedImageBitmap,
                     binding.plantingDateText.text.toString(),
@@ -129,8 +140,8 @@ class EditMyPlantItemFragment : Fragment() {
                     binding.plantFertilizingFrequencyText.text.toString(),
                     binding.plantDiseaseText.text.toString()
                 )
-
                 viewModel.updateMyPlant(plant)
+                // return to myPlants list fragment
                 findNavController().navigate(R.id.action_editMyPlantItemFragment_to_myPlantsFragment)
             } else {
                 Toast.makeText(
@@ -145,7 +156,7 @@ class EditMyPlantItemFragment : Fragment() {
         return binding.root
     }
 
-
+    // function for showing the image picker dialog to the user
     private fun openImagePicker() {
         val options = arrayOf<CharSequence>(
             getString(R.string.take_picture),
@@ -154,6 +165,7 @@ class EditMyPlantItemFragment : Fragment() {
         )
         val builder = androidx.appcompat.app.AlertDialog.Builder(requireContext())
         builder.setTitle(getString(R.string.select_image))
+        // options are either camera or gallery
         builder.setItems(options) { dialog, which ->
             when (which) {
                 0 ->
@@ -185,11 +197,13 @@ class EditMyPlantItemFragment : Fragment() {
         dialog.show()
     }
 
+    // function for opening camera
     private fun openCamera() {
         val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
         cameraLauncher.launch(cameraIntent)
     }
 
+    // function for opening gallery
     private fun openGallery() {
         val galleryIntent =
             Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)

@@ -10,6 +10,7 @@ import com.example.plantcruiser.utils.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
+// viewModel for the plant details fragment
 @HiltViewModel
 class DBPlantDetailViewModel @Inject constructor(
     private val plantRepository: Repository
@@ -17,12 +18,14 @@ class DBPlantDetailViewModel @Inject constructor(
 
     private val _id = MutableLiveData<Int>()
 
+    // uses repository function to fetch plant with _id
     private val _plant = _id.switchMap {
         plantRepository.getPlant(it)
     }
 
     val plant: LiveData<Resource<Plant>> = _plant
 
+    // sets the _id value
     fun setId(id: Int) {
         _id.value = id
     }

@@ -10,6 +10,7 @@ import com.example.plantcruiser.R
 import com.example.plantcruiser.databinding.MainMenuFragmentBinding
 import dagger.hilt.android.AndroidEntryPoint
 
+// fragment for the main menu
 @AndroidEntryPoint
 class MainMenuFragment : Fragment() {
     private var _binding : MainMenuFragmentBinding? = null
@@ -21,6 +22,7 @@ class MainMenuFragment : Fragment() {
     ): View? {
         _binding = MainMenuFragmentBinding.inflate(inflater,container,false)
 
+        // set listeners for all menu options and navigate accordingly
         binding.languageButton.setOnClickListener {
             findNavController().navigate(R.id.action_mainMenuFragment_to_languageDialogFragment)
         }

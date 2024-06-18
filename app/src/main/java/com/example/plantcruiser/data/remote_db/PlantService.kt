@@ -7,6 +7,7 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 import retrofit2.http.QueryMap
 
+// Retrofit service interface fo making HTTP requests to the API
 interface PlantService {
 
     @GET("species-list?")

@@ -11,6 +11,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+// viewModel for the plant details fragment
 @HiltViewModel
 class MyPlantItemViewModel @Inject constructor(
     private val plantRepository: Repository
@@ -28,8 +29,7 @@ class MyPlantItemViewModel @Inject constructor(
         _id.value = id
     }
 
-    fun getMyPlant(id: Int) = plantRepository.getMyPlant(id)
-
+    // functions allowing DB operations from repository
     fun insertMyPlant(plant: MyPlant) = viewModelScope.launch {
         plantRepository.insertPlant(plant)
     }

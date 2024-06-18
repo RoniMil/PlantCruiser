@@ -4,25 +4,17 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.plantcruiser.R
-import com.example.plantcruiser.databinding.DbPlantListFragmentBinding
 import com.example.plantcruiser.databinding.MyPlantsFragmentBinding
-import com.example.plantcruiser.ui.dbPlantList.DBPlantListViewModel
-import com.example.plantcruiser.ui.dbPlantList.PlantsAdapter
-import com.example.plantcruiser.utils.Constants
-import com.example.plantcruiser.utils.Error
-import com.example.plantcruiser.utils.Loading
-import com.example.plantcruiser.utils.Success
 import com.example.plantcruiser.utils.autoCleared
 import dagger.hilt.android.AndroidEntryPoint
 
+// fragment for presenting the MyPlants' items
 @AndroidEntryPoint
 class MyPlantsFragment : Fragment() , MyPlantsAdapter.PlantItemListener {
     private val viewModel: MyPlantsViewModel by viewModels()
@@ -38,6 +30,7 @@ class MyPlantsFragment : Fragment() , MyPlantsAdapter.PlantItemListener {
     ): View? {
         binding = MyPlantsFragmentBinding.inflate(inflater, container, false)
 
+        // add plant button navigates to add plant fragment
         binding.addButton.setOnClickListener {
             findNavController().navigate(R.id.action_myPlantsFragment_to_addMyPlantItemFragment)
         }
@@ -53,6 +46,7 @@ class MyPlantsFragment : Fragment() , MyPlantsAdapter.PlantItemListener {
         binding.recyclerViewPlants.layoutManager = GridLayoutManager(requireContext(), 3)
         binding.recyclerViewPlants.adapter = adapter
 
+        // set plants in adapter as current observed plants list
         viewModel.plants.observe(viewLifecycleOwner) {
             adapter.setPlants(it)
 
@@ -62,7 +56,7 @@ class MyPlantsFragment : Fragment() , MyPlantsAdapter.PlantItemListener {
 
     }
 
-
+    // listener for clicking a plant item card, moves to plant detail fragment and sends that plant's id
     override fun onPlantClick(plantId: Int) {
         findNavController().navigate(
             R.id.action_myPlantsFragment_to_myPlantItemFragment,

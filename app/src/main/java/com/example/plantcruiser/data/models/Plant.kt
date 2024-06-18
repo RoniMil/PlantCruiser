@@ -3,6 +3,7 @@ package com.example.plantcruiser.data.models
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
+// Model for Plant DB feature items
 @Entity(tableName = "plants")
 data class Plant(
     @PrimaryKey

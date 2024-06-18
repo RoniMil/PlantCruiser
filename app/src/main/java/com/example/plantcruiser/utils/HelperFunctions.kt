@@ -4,7 +4,7 @@ import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import java.io.ByteArrayOutputStream
 
-
+// helper functions for type conversions
 class HelperFunctions {
     companion object {
         fun fromBitmap(bitmap: Bitmap?): ByteArray? {

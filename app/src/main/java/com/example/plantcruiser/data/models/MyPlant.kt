@@ -4,6 +4,7 @@ import android.graphics.Bitmap
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
+// Model for My Plants feature items
 @Entity(tableName = "myPlants")
 class MyPlant (
     @PrimaryKey(autoGenerate = true)

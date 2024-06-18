@@ -1,79 +1,37 @@
 package com.example.plantcruiser.ui.suggestAPlant
 
-import android.Manifest
 import android.content.Context
-import android.content.pm.PackageManager
 import android.hardware.Sensor
 import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
 import android.hardware.SensorManager
-import android.location.Location
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.activity.result.ActivityResultLauncher
-import androidx.activity.result.contract.ActivityResultContracts
-import androidx.core.app.ActivityCompat
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.plantcruiser.R
 import com.example.plantcruiser.databinding.SuggestAPlantParamsSelectionFragmentBinding
 import com.example.plantcruiser.utils.autoCleared
-import com.google.android.gms.location.FusedLocationProviderClient
-import com.google.android.gms.location.Priority
-import com.google.android.gms.tasks.CancellationTokenSource
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.launch
-import javax.inject.Inject
 
+// fragment for allowing the user to choose parameters for suggestions
 @AndroidEntryPoint
 class SuggestAPlantParamsSelectionFragment : Fragment(), SensorEventListener {
 
     private var binding: SuggestAPlantParamsSelectionFragmentBinding by autoCleared()
 
-    private var location: Location? = null
-
-
+    // sensors for environment sensors option, with manager for them
     private lateinit var sensorManager: SensorManager
-
     private var lightSensor: Sensor? = null
-
     private var ambientTempSensor: Sensor? = null
 
+    // vars to hold the light and ambient temperature values to pass as query params
     private var light: Float? = null
     private var ambientTemp: Float? = null
-
-
-    @Inject
-    lateinit var fusedLocationClient: FusedLocationProviderClient
-
-    private val locationPermissionsLauncher: ActivityResultLauncher<String> =
-        registerForActivityResult(
-            ActivityResultContracts.RequestPermission()
-        ) {
-            if (it) {
-                if (ActivityCompat.checkSelfPermission(
-                        requireContext(),
-                        Manifest.permission.ACCESS_COARSE_LOCATION
-                    ) != PackageManager.PERMISSION_GRANTED
-                ) {
-                    getAndSetLocation(fusedLocationClient = fusedLocationClient)
-                }
-
-            } else {
-                Toast.makeText(
-                    requireContext(),
-                    getString(R.string.no_location_permission),
-                    Toast.LENGTH_SHORT
-                ).show()
-            }
-
-
-        }
 
 
     override fun onCreateView(
@@ -83,10 +41,12 @@ class SuggestAPlantParamsSelectionFragment : Fragment(), SensorEventListener {
     ): View? {
         binding = SuggestAPlantParamsSelectionFragmentBinding.inflate(inflater, container, false)
 
+        // init sensor manager and retrieve sensors from android device
         sensorManager = requireContext().getSystemService(Context.SENSOR_SERVICE) as SensorManager
         lightSensor = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT)
         ambientTempSensor = sensorManager.getDefaultSensor(Sensor.TYPE_AMBIENT_TEMPERATURE)
 
+        // listener for the environment sensor option, triggers retrieving light and temp information from device if possible
         binding.environmentSensorButton.setOnClickListener {
             light?.let {
                 setLightLevelAndIndoor(light!!)
@@ -109,7 +69,7 @@ class SuggestAPlantParamsSelectionFragment : Fragment(), SensorEventListener {
 
         }
 
-
+        // listener for finish button, sets argument values and passes them to suggest a plant list fragment
         binding.finishButton.setOnClickListener {
             val indoor = binding.indoorsSwitch.isChecked.toString()
             val sunlight = setSunlight()
@@ -128,45 +88,7 @@ class SuggestAPlantParamsSelectionFragment : Fragment(), SensorEventListener {
         return binding.root
     }
 
-    private fun requestLocationPermissions(launcher: ActivityResultLauncher<String>) {
-        if (ActivityCompat.checkSelfPermission(
-                requireContext(),
-                Manifest.permission.ACCESS_COARSE_LOCATION
-            ) != PackageManager.PERMISSION_GRANTED
-        ) {
-            launcher.launch(Manifest.permission.ACCESS_COARSE_LOCATION)
-        } else {
-            getAndSetLocation(fusedLocationClient = fusedLocationClient)
-
-        }
-    }
-
-    private fun getAndSetLocation(fusedLocationClient: FusedLocationProviderClient) {
-        viewLifecycleOwner.lifecycleScope.launch {
-            if (ActivityCompat.checkSelfPermission(
-                    requireContext(),
-                    Manifest.permission.ACCESS_COARSE_LOCATION
-                ) == PackageManager.PERMISSION_GRANTED
-            ) {
-                fusedLocationClient.getCurrentLocation(
-                    Priority.PRIORITY_LOW_POWER,
-                    CancellationTokenSource().token,
-                ).addOnSuccessListener {
-                    it?.let { fetchedLocation ->
-                        location = fetchedLocation
-                    }
-                }
-            } else {
-                Toast.makeText(
-                    requireContext(),
-                    getString(R.string.no_location_permission),
-                    Toast.LENGTH_SHORT
-                ).show()
-            }
-
-        }
-    }
-
+    // register the sensors for sensor manager
     override fun onResume() {
         super.onResume()
         if (lightSensor != null) {
@@ -181,11 +103,13 @@ class SuggestAPlantParamsSelectionFragment : Fragment(), SensorEventListener {
         }
     }
 
+    // unregister the sensors to conserve power
     override fun onPause() {
         super.onPause()
         sensorManager.unregisterListener(this)
     }
 
+    // measures sensors output
     override fun onSensorChanged(event: SensorEvent?) {
         val type = event?.sensor?.type
         when (type) {
@@ -194,9 +118,11 @@ class SuggestAPlantParamsSelectionFragment : Fragment(), SensorEventListener {
         }
     }
 
+    // required override, does nothing
     override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {
     }
 
+    // sets light and indoor arguments based on light level retrieved by sensor
     private fun setLightLevelAndIndoor(lightLevel: Float) {
         binding.apply {
             when {
@@ -224,6 +150,7 @@ class SuggestAPlantParamsSelectionFragment : Fragment(), SensorEventListener {
         }
     }
 
+    // normalizes given temperatures and matches to plant hardiness scale
     private fun getHardinessZone(tempCelsius: Float?): String {
         tempCelsius?.let {
             val normalizedTemp = it - 40
@@ -242,13 +169,14 @@ class SuggestAPlantParamsSelectionFragment : Fragment(), SensorEventListener {
                 normalizedTemp <= 15.6 -> "12-13"
                 else -> "13-13"
             }
-
+        // if null, return empty string
         } ?: run {
             return ""
         }
 
     }
 
+    // returns the button that's pressed as value, empty string if no button is selected.
     private fun setSunlight(): String {
         if (binding.fullShade.isChecked) return "full_shade"
         if (binding.partShade.isChecked) return "part_shade"

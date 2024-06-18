@@ -8,11 +8,13 @@ import com.bumptech.glide.Glide
 import com.example.plantcruiser.data.models.Plant
 import com.example.plantcruiser.databinding.ItemPlantBinding
 
+// plant adapter for the DB list recycler view
 class PlantsAdapter(private val listener: PlantItemListener) :
     RecyclerView.Adapter<PlantsAdapter.PlantViewHolder>() {
 
     private val plants = ArrayList<Plant>()
 
+    // holder for plant item Class
     class PlantViewHolder(
         private val itemBinding: ItemPlantBinding,
         private val listener: PlantItemListener
@@ -25,6 +27,7 @@ class PlantsAdapter(private val listener: PlantItemListener) :
             itemBinding.root.setOnClickListener(this)
         }
 
+        // bind current plant to a cell in the recycler
         fun bind(item: Plant) {
             this.plant = item
             itemBinding.plantName.text = item.common_name
@@ -40,6 +43,7 @@ class PlantsAdapter(private val listener: PlantItemListener) :
 
     }
 
+    // sets the plants to show in the recycler
     fun setPlants(plants: Collection<Plant>) {
         this.plants.clear()
         this.plants.addAll(plants)
@@ -57,9 +61,9 @@ class PlantsAdapter(private val listener: PlantItemListener) :
 
     override fun getItemCount() = plants.size
 
-
+    // listener interface for clicking the plants from DB list
     interface PlantItemListener {
-        fun onPlantClick(plantId : Int)
+        fun onPlantClick(plantId: Int)
     }
 
 }

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><!-- This xml defines the dialog for changing languages -->
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"

@@ -9,7 +9,7 @@ import androidx.room.Query
 import androidx.room.Update
 import com.example.plantcruiser.data.models.MyPlant
 
-
+// Dao for the MyPlant type, allow CRUD actions on DB
 @Dao
 interface MyPlantDao {
     @Query("SELECT * FROM myPlants")

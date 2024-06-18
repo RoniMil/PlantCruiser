@@ -9,17 +9,19 @@ import com.example.plantcruiser.data.models.MyPlant
 import com.example.plantcruiser.data.models.Plant
 import com.example.plantcruiser.data.models.SuggestedPlant
 
-
+// Database class
 @Database(entities = [Plant::class, MyPlant::class, SuggestedPlant::class], version = 2, exportSchema = false)
 @TypeConverters(Converters::class)
 abstract class AppDatabase : RoomDatabase() {
 
+    // Abstract functions for all database's dao's
     abstract fun plantDao(): PlantDao
 
     abstract fun myPlantsDao() : MyPlantDao
 
     abstract fun suggestedPlantsDao() : SuggestedPlantsDao
 
+    // Companion object for creating the app's database
     companion object {
 
         @Volatile

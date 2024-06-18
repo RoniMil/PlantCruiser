@@ -17,6 +17,7 @@ import com.example.plantcruiser.utils.Success
 import com.example.plantcruiser.utils.autoCleared
 import dagger.hilt.android.AndroidEntryPoint
 
+// fragment for presenting the suggestions' items
 @AndroidEntryPoint
 class SuggestAPlantListFragment : Fragment(), SuggestedPlantsAdapter.PlantItemListener {
 
@@ -44,9 +45,11 @@ class SuggestAPlantListFragment : Fragment(), SuggestedPlantsAdapter.PlantItemLi
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         adapter = SuggestedPlantsAdapter(this)
+        // set adapter to present the items in a grid with 3 columns
         binding.recyclerViewPlants.layoutManager = GridLayoutManager(requireContext(), 3)
         binding.recyclerViewPlants.adapter = adapter
 
+        // observes the plant list LiveData and updates UI based on its status
         viewModel.plants.observe(viewLifecycleOwner) { it ->
             when (it.status) {
                 is Loading -> {
@@ -55,6 +58,7 @@ class SuggestAPlantListFragment : Fragment(), SuggestedPlantsAdapter.PlantItemLi
 
                 is Success -> {
                     binding.progressBar.visibility = View.GONE
+                    // if null just present an empty list (no plants)
                     adapter.setPlants(it.status.data ?: emptyList())
                 }
 
@@ -65,6 +69,7 @@ class SuggestAPlantListFragment : Fragment(), SuggestedPlantsAdapter.PlantItemLi
             }
 
         }
+        // sets the options variable in viewModel with the user's selections
         arguments?.let {
             viewModel.setOptions(
                 it.getString("indoor"),
@@ -75,6 +80,7 @@ class SuggestAPlantListFragment : Fragment(), SuggestedPlantsAdapter.PlantItemLi
     }
 
 
+    // listener for clicking a plant item card, moves to plant detail fragment and sends that plant's id
     override fun onPlantClick(plantId: Int) {
         findNavController().navigate(
             R.id.action_suggestAPlantListFragment_to_suggestAPlantDetailFragment,

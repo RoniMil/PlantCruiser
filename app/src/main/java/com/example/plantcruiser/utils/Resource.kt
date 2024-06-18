@@ -1,5 +1,6 @@
 package com.example.plantcruiser.utils
 
+// class for keeping track of status
 class Resource<out T> private constructor(val status: Status<T>){
 
     companion object {

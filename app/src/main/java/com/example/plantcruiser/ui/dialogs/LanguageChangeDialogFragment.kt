@@ -10,13 +10,14 @@ import androidx.annotation.RequiresApi
 import androidx.fragment.app.DialogFragment
 import com.example.plantcruiser.R
 import com.example.plantcruiser.databinding.LanguageChangeDialogBinding
-import com.example.plantcruiser.utils.HelperFunctions
 import java.util.Locale
 
+// dialog for showing the option to language change
 class LanguageChangeDialogFragment : DialogFragment() {
 
-    private var _binding : LanguageChangeDialogBinding? = null
+    private var _binding: LanguageChangeDialogBinding? = null
     private val binding get() = _binding!!
+
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         return activity?.let {

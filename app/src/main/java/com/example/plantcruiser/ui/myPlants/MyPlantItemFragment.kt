@@ -18,6 +18,7 @@ import com.example.plantcruiser.utils.HelperFunctions
 import com.example.plantcruiser.utils.autoCleared
 import dagger.hilt.android.AndroidEntryPoint
 
+// fragment for showing a specific plant's details in my plants feature
 @AndroidEntryPoint
 class MyPlantItemFragment : Fragment() {
     private val viewModel: MyPlantItemViewModel by viewModels()
@@ -34,7 +35,9 @@ class MyPlantItemFragment : Fragment() {
     ): View? {
         binding = MyPlantItemFragmentBinding.inflate(inflater, container, false)
 
+        // edit button listner
         binding.editButton.setOnClickListener {
+            // pass the current plant's details to the edit plant fragment
             val plant = viewModel.plant.value!!
             arguments?.getInt("id")?.let {
                 findNavController().navigate(
@@ -54,6 +57,7 @@ class MyPlantItemFragment : Fragment() {
 
         }
 
+        // remove plant button listener, triggers a dialog asking the user if they are sure about removing the plant
         binding.removeButton.setOnClickListener {
             val plant = viewModel.plant.value!!
 
@@ -63,10 +67,11 @@ class MyPlantItemFragment : Fragment() {
             builder.setTitle(getString(R.string.remove_plant_dialog))
             builder.setMessage(getString(R.string.remove_plant_dialog_text))
 
-            // if accepted and language was changed, call on changeLocale method to change language
+            // if accepted, call on viewModel to remove this plant from the DB
             builder.setPositiveButton(R.string.dialog_accept) { dialog, _ ->
                 viewModel.deleteMyPlant(plant)
                 dialog.dismiss()
+                // move back to my plants list fragment
                 findNavController().navigate(R.id.action_myPlantItemFragment_to_myPlantsFragment)
             }
 
@@ -86,7 +91,8 @@ class MyPlantItemFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        plantObserver = Observer { plant : MyPlant? ->
+        plantObserver = Observer { plant: MyPlant? ->
+            // if the plant exists, show it in the list
             if (plant != null) {
                 updatePlant(plant)
             } else {
@@ -95,14 +101,16 @@ class MyPlantItemFragment : Fragment() {
             }
         }
 
+        // viewmodel observer for the plant
         viewModel.plant.observe(viewLifecycleOwner, plantObserver!!)
 
+        // set viewmodel id as the plant's id received as argument
         arguments?.getInt("id")?.let {
             viewModel.setId(it)
         }
     }
 
-
+    // Function for updating the details showing in the fragment with the plant information
     private fun updatePlant(myPlant: MyPlant) {
         binding.plantName.text = myPlant.name
         binding.plantingDateText.text = myPlant.plantingDate
